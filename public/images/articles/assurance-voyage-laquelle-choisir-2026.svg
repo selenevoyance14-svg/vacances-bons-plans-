@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C75"/>
+      <stop offset="50%" stop-color="#1B6B93"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Decorative shapes -->
+  <circle cx="1100" cy="80" r="150" fill="#14B8A6" opacity="0.1"/>
+  <circle cx="50" cy="580" r="100" fill="#5EEAD4" opacity="0.08"/>
+  <rect x="900" y="500" width="300" height="200" rx="20" fill="#0D9488" opacity="0.15" transform="rotate(-15 1050 600)"/>
+  <!-- Grid pattern -->
+  <line x1="0" y1="100" x2="1200" y2="100" stroke="#5EEAD4" stroke-width="0.5" opacity="0.08"/>
+  <line x1="0" y1="200" x2="1200" y2="200" stroke="#5EEAD4" stroke-width="0.5" opacity="0.08"/>
+  <line x1="0" y1="300" x2="1200" y2="300" stroke="#5EEAD4" stroke-width="0.5" opacity="0.08"/>
+  <line x1="0" y1="400" x2="1200" y2="400" stroke="#5EEAD4" stroke-width="0.5" opacity="0.08"/>
+  <line x1="0" y1="500" x2="1200" y2="500" stroke="#5EEAD4" stroke-width="0.5" opacity="0.08"/>
+  <!-- Shield icon -->
+  <g transform="translate(250, 180)">
+    <path d="M0,-120 L80,-80 L80,30 Q80,100 0,130 Q-80,100 -80,30 L-80,-80 Z" fill="url(#shield)" opacity="0.9"/>
+    <path d="M0,-90 L55,-60 L55,20 Q55,72 0,95 Q-55,72 -55,20 L-55,-60 Z" fill="#0F4C75" opacity="0.6"/>
+    <!-- Checkmark inside shield -->
+    <polyline points="-25,5 -8,25 30,-20" fill="none" stroke="#5EEAD4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Medical cross -->
+  <g transform="translate(150, 420)">
+    <rect x="-15" y="-35" width="30" height="70" rx="5" fill="#F0FDFA" opacity="0.8"/>
+    <rect x="-35" y="-15" width="70" height="30" rx="5" fill="#F0FDFA" opacity="0.8"/>
+  </g>
+  <!-- Small airplane -->
+  <g transform="translate(400, 120) rotate(-10)">
+    <ellipse cx="0" cy="0" rx="30" ry="7" fill="#CCFBF1" opacity="0.8"/>
+    <polygon points="-10,-7 -10,-25 5,-7" fill="#CCFBF1" opacity="0.75"/>
+    <polygon points="18,-3 18,-13 28,-3" fill="#CCFBF1" opacity="0.75"/>
+  </g>
+  <!-- Document/policy icon -->
+  <g transform="translate(130, 280)">
+    <rect x="-25" y="-35" width="50" height="65" rx="4" fill="#99F6E4" opacity="0.6"/>
+    <line x1="-15" y1="-18" x2="15" y2="-18" stroke="#0F4C75" stroke-width="3" opacity="0.5"/>
+    <line x1="-15" y1="-5" x2="15" y2="-5" stroke="#0F4C75" stroke-width="3" opacity="0.5"/>
+    <line x1="-15" y1="8" x2="5" y2="8" stroke="#0F4C75" stroke-width="3" opacity="0.5"/>
+  </g>
+  <!-- Heart/health icon -->
+  <g transform="translate(380, 400)">
+    <path d="M0,15 Q-25,-10 -20,-25 Q-15,-40 0,-25 Q15,-40 20,-25 Q25,-10 0,15Z" fill="#F87171" opacity="0.7" transform="scale(1.5)"/>
+  </g>
+  <!-- Main text -->
+  <text x="780" y="250" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Assurance Voyage</text>
+  <!-- Subtitle badge -->
+  <rect x="600" y="290" width="360" height="70" rx="35" fill="#14B8A6" opacity="0.9"/>
+  <text x="780" y="338" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Guide complet 2026</text>
+  <!-- Bottom text -->
+  <text x="780" y="460" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#99F6E4" text-anchor="middle">Comparez les meilleures assurances</text>
+  <text x="780" y="500" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#99F6E4" text-anchor="middle">pour voyager en toute serenite</text>
+</svg>

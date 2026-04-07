@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e74c3c"/>
+      <stop offset="50%" style="stop-color:#f39c12"/>
+      <stop offset="100%" style="stop-color:#f1c40f"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2980b9;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#1a5276;stop-opacity:0.8"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Sun -->
+  <circle cx="950" cy="120" r="90" fill="#f1c40f" opacity="0.9"/>
+  <circle cx="950" cy="120" r="70" fill="#f9e654"/>
+  <!-- Sun rays -->
+  <g stroke="#f9e654" stroke-width="4" opacity="0.6">
+    <line x1="950" y1="10" x2="950" y2="0"/>
+    <line x1="1040" y1="50" x2="1060" y2="35"/>
+    <line x1="1060" y1="120" x2="1080" y2="120"/>
+    <line x1="1040" y1="190" x2="1060" y2="205"/>
+    <line x1="950" y1="230" x2="950" y2="250"/>
+    <line x1="860" y1="190" x2="840" y2="205"/>
+    <line x1="840" y1="120" x2="820" y2="120"/>
+    <line x1="860" y1="50" x2="840" y2="35"/>
+  </g>
+  <!-- Flamenco fan shape -->
+  <g transform="translate(180, 280)" opacity="0.25">
+    <path d="M0,200 Q0,0 150,-50 Q160,50 80,200 Z" fill="#c0392b"/>
+    <path d="M0,200 Q30,-20 200,-80 Q190,30 100,200 Z" fill="#e74c3c"/>
+    <path d="M0,200 Q80,-30 250,-60 Q220,50 120,200 Z" fill="#d35400"/>
+    <path d="M0,200 Q120,-20 280,-20 Q240,70 130,200 Z" fill="#e67e22"/>
+    <path d="M0,200 Q160,10 300,30 Q250,100 140,200 Z" fill="#f39c12"/>
+  </g>
+  <!-- Mediterranean sea -->
+  <path d="M0,480 Q150,450 300,470 Q450,490 600,460 Q750,430 900,460 Q1050,490 1200,470 L1200,630 L0,630 Z" fill="url(#sea)"/>
+  <path d="M0,510 Q200,490 400,510 Q600,530 800,500 Q1000,470 1200,500 L1200,630 L0,630 Z" fill="#1a5276" opacity="0.5"/>
+  <!-- Decorative dots -->
+  <circle cx="100" cy="100" r="8" fill="#fff" opacity="0.2"/>
+  <circle cx="200" cy="60" r="5" fill="#fff" opacity="0.15"/>
+  <circle cx="350" cy="90" r="6" fill="#fff" opacity="0.2"/>
+  <circle cx="500" cy="50" r="7" fill="#fff" opacity="0.15"/>
+  <circle cx="700" cy="80" r="5" fill="#fff" opacity="0.2"/>
+  <!-- Text -->
+  <text x="600" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#fff" style="text-shadow:2px 2px 4px rgba(0,0,0,0.3)">
+    <tspan>Espagne All Inclusive</tspan>
+  </text>
+  <rect x="420" y="330" width="360" height="70" rx="35" fill="#c0392b" opacity="0.9"/>
+  <text x="600" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#fff">
+    Des 429&#8364;
+  </text>
+  <!-- Small decorative elements -->
+  <rect x="440" y="260" width="320" height="4" rx="2" fill="#fff" opacity="0.3"/>
+  <rect x="480" y="410" width="240" height="3" rx="1.5" fill="#fff" opacity="0.2"/>
+</svg>

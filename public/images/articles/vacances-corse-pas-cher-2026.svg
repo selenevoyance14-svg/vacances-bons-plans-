@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a6e5c;stop-opacity:1"/>
+      <stop offset="40%" style="stop-color:#1a9e8a;stop-opacity:1"/>
+      <stop offset="70%" style="stop-color:#20b2aa;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#1e90ff;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ced1;stop-opacity:0.8"/>
+      <stop offset="50%" style="stop-color:#40e0d0;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#48d1cc;stop-opacity:0.8"/>
+    </linearGradient>
+    <linearGradient id="mountain" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d5a3d;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#1a3a25;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#ff8c00;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Sun -->
+  <circle cx="950" cy="120" r="70" fill="url(#sun)"/>
+  <circle cx="950" cy="120" r="85" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.4"/>
+  <circle cx="950" cy="120" r="100" fill="none" stroke="#ffd700" stroke-width="1" opacity="0.2"/>
+  <!-- Sun rays -->
+  <g stroke="#ffd700" stroke-width="3" opacity="0.5">
+    <line x1="950" y1="20" x2="950" y2="5"/>
+    <line x1="1020" y1="50" x2="1035" y2="38"/>
+    <line x1="1050" y1="120" x2="1068" y2="120"/>
+    <line x1="1020" y1="190" x2="1035" y2="202"/>
+    <line x1="950" y1="220" x2="950" y2="238"/>
+    <line x1="880" y1="190" x2="865" y2="202"/>
+    <line x1="850" y1="120" x2="832" y2="120"/>
+    <line x1="880" y1="50" x2="865" y2="38"/>
+  </g>
+  <!-- Mountains (maquis) - back layer -->
+  <polygon points="0,380 100,220 200,280 350,180 500,260 600,200 700,300 800,240 900,320 1000,250 1100,290 1200,220 1200,380" fill="#1a3a25" opacity="0.6"/>
+  <!-- Mountains - front layer -->
+  <polygon points="0,420 80,300 180,340 300,250 420,320 520,270 650,350 780,280 880,360 1000,300 1100,340 1200,280 1200,420" fill="url(#mountain)"/>
+  <!-- Rocky coastline -->
+  <polygon points="0,420 50,410 100,425 180,400 250,430 320,405 400,435 480,410 550,440 620,415 700,445 780,420 850,450 920,425 1000,455 1080,430 1150,460 1200,440 1200,470 0,470" fill="#3a6b50"/>
+  <!-- Crystal sea -->
+  <rect x="0" y="460" width="1200" height="170" fill="url(#sea)"/>
+  <!-- Sea waves -->
+  <path d="M0,490 Q60,475 120,490 Q180,505 240,490 Q300,475 360,490 Q420,505 480,490 Q540,475 600,490 Q660,505 720,490 Q780,475 840,490 Q900,505 960,490 Q1020,475 1080,490 Q1140,505 1200,490" fill="none" stroke="white" stroke-width="2" opacity="0.4"/>
+  <path d="M0,520 Q60,505 120,520 Q180,535 240,520 Q300,505 360,520 Q420,535 480,520 Q540,505 600,520 Q660,535 720,520 Q780,505 840,520 Q900,535 960,520 Q1020,505 1080,520 Q1140,535 1200,520" fill="none" stroke="white" stroke-width="1.5" opacity="0.3"/>
+  <!-- Maquis bushes on mountains -->
+  <circle cx="200" cy="335" r="15" fill="#2d6b3f" opacity="0.7"/>
+  <circle cx="220" cy="330" r="12" fill="#3a7d4f" opacity="0.6"/>
+  <circle cx="400" cy="310" r="18" fill="#2d6b3f" opacity="0.7"/>
+  <circle cx="425" cy="315" r="14" fill="#3a7d4f" opacity="0.6"/>
+  <circle cx="650" cy="340" r="16" fill="#2d6b3f" opacity="0.7"/>
+  <circle cx="670" cy="335" r="13" fill="#3a7d4f" opacity="0.6"/>
+  <!-- Decorative geometric shapes -->
+  <rect x="40" y="40" width="8" height="8" fill="white" opacity="0.3" transform="rotate(45,44,44)"/>
+  <rect x="150" y="80" width="6" height="6" fill="white" opacity="0.2" transform="rotate(45,153,83)"/>
+  <rect x="300" y="50" width="10" height="10" fill="white" opacity="0.25" transform="rotate(45,305,55)"/>
+  <!-- Text -->
+  <text x="100" y="160" font-family="Arial, Helvetica, sans-serif" font-size="90" font-weight="bold" fill="white" letter-spacing="6">CORSE</text>
+  <rect x="100" y="180" width="280" height="4" rx="2" fill="#ffd700" opacity="0.8"/>
+  <text x="100" y="240" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="white" opacity="0.9" letter-spacing="3">Plages &amp; Montagnes</text>
+  <!-- Small decorative badge -->
+  <rect x="100" y="265" width="120" height="32" rx="16" fill="white" opacity="0.2"/>
+  <text x="160" y="287" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">2026</text>
+</svg>

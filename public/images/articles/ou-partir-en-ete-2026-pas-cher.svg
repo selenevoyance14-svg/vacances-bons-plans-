@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f9a825"/>
+      <stop offset="50%" style="stop-color:#ff6f00"/>
+      <stop offset="100%" style="stop-color:#ff5252"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Decorative geometric shapes background -->
+  <circle cx="100" cy="100" r="60" fill="#fff" opacity="0.08"/>
+  <circle cx="1100" cy="530" r="80" fill="#fff" opacity="0.06"/>
+  <rect x="900" y="50" width="100" height="100" rx="15" fill="#fff" opacity="0.06" transform="rotate(30 950 100)"/>
+  <polygon points="200,500 240,440 280,500" fill="#fff" opacity="0.06"/>
+  <!-- Airplane icon -->
+  <g transform="translate(150, 100) rotate(-20)" opacity="0.3">
+    <path d="M0,25 L60,15 L100,0 L60,25 L100,50 L60,35 L0,25 Z" fill="#fff"/>
+    <path d="M40,25 L50,5 L65,20 L50,25 Z" fill="#fff" opacity="0.8"/>
+  </g>
+  <!-- Sun icon -->
+  <g transform="translate(950, 130)" opacity="0.3">
+    <circle cx="0" cy="0" r="30" fill="#fff"/>
+    <g stroke="#fff" stroke-width="4">
+      <line x1="0" y1="-45" x2="0" y2="-55"/>
+      <line x1="32" y1="-32" x2="39" y2="-39"/>
+      <line x1="45" y1="0" x2="55" y2="0"/>
+      <line x1="32" y1="32" x2="39" y2="39"/>
+      <line x1="0" y1="45" x2="0" y2="55"/>
+      <line x1="-32" y1="32" x2="-39" y2="39"/>
+      <line x1="-45" y1="0" x2="-55" y2="0"/>
+      <line x1="-32" y1="-32" x2="-39" y2="-39"/>
+    </g>
+  </g>
+  <!-- Umbrella icon -->
+  <g transform="translate(100, 400)" opacity="0.25">
+    <path d="M-40,0 Q0,-60 40,0 Z" fill="#fff"/>
+    <line x1="0" y1="-5" x2="0" y2="50" stroke="#fff" stroke-width="4"/>
+    <path d="M0,50 Q10,55 10,45" stroke="#fff" stroke-width="3" fill="none"/>
+  </g>
+  <!-- Waves icon -->
+  <g transform="translate(1000, 420)" opacity="0.2">
+    <path d="M-50,0 Q-25,-15 0,0 Q25,15 50,0" stroke="#fff" stroke-width="5" fill="none"/>
+    <path d="M-50,20 Q-25,5 0,20 Q25,35 50,20" stroke="#fff" stroke-width="5" fill="none"/>
+    <path d="M-50,40 Q-25,25 0,40 Q25,55 50,40" stroke="#fff" stroke-width="4" fill="none"/>
+  </g>
+  <!-- Small airplane top right -->
+  <g transform="translate(750, 80) rotate(-10)" opacity="0.15">
+    <path d="M0,12 L30,7 L50,0 L30,12 L50,24 L30,17 L0,12 Z" fill="#fff"/>
+  </g>
+  <!-- Small palm tree -->
+  <g transform="translate(1080, 320)" opacity="0.15">
+    <rect x="-3" y="0" width="6" height="80" fill="#fff"/>
+    <path d="M0,0 Q-40,-20 -50,-5" stroke="#fff" stroke-width="4" fill="none"/>
+    <path d="M0,0 Q40,-20 50,-5" stroke="#fff" stroke-width="4" fill="none"/>
+    <path d="M0,0 Q0,-30 5,-40" stroke="#fff" stroke-width="3" fill="none"/>
+  </g>
+  <!-- Dotted path (travel route) -->
+  <path d="M200,180 Q400,120 600,200 Q800,280 1000,180" stroke="#fff" stroke-width="3" stroke-dasharray="10,8" fill="none" opacity="0.2"/>
+  <!-- Text -->
+  <text x="600" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="68" font-weight="bold" fill="#fff">
+    Ou partir en ete 2026
+  </text>
+  <rect x="380" y="340" width="440" height="65" rx="32" fill="#d84315" opacity="0.85"/>
+  <text x="600" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#fff">
+    Top 10 pas cher
+  </text>
+  <!-- Decorative lines -->
+  <rect x="380" y="265" width="440" height="4" rx="2" fill="#fff" opacity="0.3"/>
+  <rect x="430" y="415" width="340" height="3" rx="1.5" fill="#fff" opacity="0.2"/>
+  <!-- Small decorative dots -->
+  <circle cx="350" cy="290" r="4" fill="#fff" opacity="0.3"/>
+  <circle cx="850" cy="290" r="4" fill="#fff" opacity="0.3"/>
+</svg>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d32f2f"/>
+      <stop offset="50%" style="stop-color:#ff5722"/>
+      <stop offset="100%" style="stop-color:#ff9800"/>
+    </linearGradient>
+    <linearGradient id="badge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffeb3b"/>
+      <stop offset="100%" style="stop-color:#ffc107"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Urgency stripes -->
+  <g opacity="0.06">
+    <rect x="-50" y="0" width="80" height="900" fill="#fff" transform="rotate(-35 0 0)"/>
+    <rect x="100" y="0" width="80" height="900" fill="#fff" transform="rotate(-35 0 0)"/>
+    <rect x="250" y="0" width="80" height="900" fill="#fff" transform="rotate(-35 0 0)"/>
+    <rect x="400" y="0" width="80" height="900" fill="#fff" transform="rotate(-35 0 0)"/>
+    <rect x="550" y="0" width="80" height="900" fill="#fff" transform="rotate(-35 0 0)"/>
+    <rect x="700" y="0" width="80" height="900" fill="#fff" transform="rotate(-35 0 0)"/>
+    <rect x="850" y="0" width="80" height="900" fill="#fff" transform="rotate(-35 0 0)"/>
+    <rect x="1000" y="0" width="80" height="900" fill="#fff" transform="rotate(-35 0 0)"/>
+  </g>
+  <!-- Clock icon -->
+  <g transform="translate(180, 250)" opacity="0.35">
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#fff" stroke-width="8"/>
+    <circle cx="0" cy="0" r="70" fill="none" stroke="#fff" stroke-width="3"/>
+    <line x1="0" y1="0" x2="0" y2="-45" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="30" y2="15" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="6" fill="#fff"/>
+    <!-- Hour marks -->
+    <line x1="0" y1="-65" x2="0" y2="-58" stroke="#fff" stroke-width="3"/>
+    <line x1="56" y1="0" x2="63" y2="0" stroke="#fff" stroke-width="3"/>
+    <line x1="0" y1="58" x2="0" y2="65" stroke="#fff" stroke-width="3"/>
+    <line x1="-63" y1="0" x2="-56" y2="0" stroke="#fff" stroke-width="3"/>
+  </g>
+  <!-- Airplane icon -->
+  <g transform="translate(900, 150) rotate(-25)" opacity="0.3">
+    <path d="M0,30 L80,18 L140,0 L80,30 L140,60 L80,42 L0,30 Z" fill="#fff"/>
+    <path d="M55,30 L70,5 L90,22 L70,30 Z" fill="#fff" opacity="0.8"/>
+    <!-- Trail -->
+    <line x1="-10" y1="30" x2="-60" y2="30" stroke="#fff" stroke-width="3" stroke-dasharray="8,6" opacity="0.5"/>
+  </g>
+  <!-- PROMO badge -->
+  <g transform="translate(950, 420)">
+    <polygon points="0,-60 17,-25 57,-35 30,-5 45,35 0,18 -45,35 -30,-5 -57,-35 -17,-25" fill="url(#badge)" opacity="0.9"/>
+    <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#d32f2f">
+      PROMO
+    </text>
+  </g>
+  <!-- Flash/lightning bolt -->
+  <g transform="translate(100, 80)" opacity="0.2">
+    <polygon points="30,0 10,40 25,40 5,80 45,30 28,30 50,0" fill="#ffeb3b"/>
+  </g>
+  <!-- Exclamation marks -->
+  <g opacity="0.15" fill="#fff">
+    <rect x="1080" y="100" width="8" height="40" rx="4"/>
+    <circle cx="1084" cy="155" r="5"/>
+    <rect x="1120" y="80" width="8" height="50" rx="4"/>
+    <circle cx="1124" cy="145" r="5"/>
+  </g>
+  <!-- Text -->
+  <text x="580" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="86" font-weight="bold" fill="#fff">
+    Derniere Minute
+  </text>
+  <rect x="400" y="320" width="360" height="65" rx="32" fill="#b71c1c" opacity="0.8"/>
+  <text x="580" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#ffeb3b">
+    Ete 2026
+  </text>
+  <!-- Decorative elements -->
+  <rect x="350" y="240" width="460" height="5" rx="2.5" fill="#ffeb3b" opacity="0.4"/>
+  <rect x="420" y="395" width="320" height="3" rx="1.5" fill="#fff" opacity="0.2"/>
+  <!-- Countdown-style dots -->
+  <g opacity="0.3" fill="#ffeb3b">
+    <circle cx="430" cy="430" r="5"/>
+    <circle cx="460" cy="430" r="5"/>
+    <circle cx="490" cy="430" r="5"/>
+    <circle cx="520" cy="430" r="5" opacity="0.5"/>
+    <circle cx="550" cy="430" r="5" opacity="0.3"/>
+  </g>
+</svg>

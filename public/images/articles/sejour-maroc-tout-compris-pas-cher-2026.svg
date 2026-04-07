@@ -1,0 +1,31 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ea580c;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Sun -->
+  <circle cx="1000" cy="100" r="70" fill="#fbbf24" opacity="0.8"/>
+  <!-- Desert dunes -->
+  <path d="M0 450 Q200 380 400 430 Q600 480 800 400 Q1000 350 1200 420 L1200 630 L0 630Z" fill="#d97706" opacity="0.4"/>
+  <path d="M0 500 Q300 440 600 490 Q900 530 1200 470 L1200 630 L0 630Z" fill="#b45309" opacity="0.3"/>
+  <!-- Mosque/Minaret -->
+  <rect x="150" y="250" width="40" height="200" fill="#fef3c7" opacity="0.9"/>
+  <rect x="135" y="240" width="70" height="20" rx="3" fill="#fef3c7" opacity="0.9"/>
+  <circle cx="170" cy="230" r="18" fill="#fef3c7" opacity="0.9"/>
+  <rect x="165" y="200" width="10" height="30" fill="#fef3c7" opacity="0.9"/>
+  <!-- Arch -->
+  <path d="M300 450 L300 330 Q370 270 440 330 L440 450Z" fill="#fef3c7" opacity="0.8" stroke="#f59e0b" stroke-width="3"/>
+  <path d="M320 450 L320 350 Q370 300 420 350 L420 450Z" fill="#ea580c" opacity="0.6"/>
+  <!-- Stars/pattern -->
+  <text x="550" y="250" font-family="Arial" font-size="30" fill="#fef3c7" opacity="0.3">✦</text>
+  <text x="650" y="200" font-family="Arial" font-size="20" fill="#fef3c7" opacity="0.25">✦</text>
+  <text x="750" y="280" font-family="Arial" font-size="25" fill="#fef3c7" opacity="0.2">✦</text>
+  <!-- Text -->
+  <text x="750" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="white">Sejour Maroc</text>
+  <text x="750" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" fill="#fde68a">Tout compris 2026</text>
+  <rect x="600" y="440" width="300" height="50" rx="25" fill="#fbbf24"/>
+  <text x="750" y="474" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#7c2d12">Des 299€/personne</text>
+</svg>

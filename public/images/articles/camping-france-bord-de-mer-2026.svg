@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e88e5;stop-opacity:1"/>
+      <stop offset="40%" style="stop-color:#42a5f5;stop-opacity:1"/>
+      <stop offset="70%" style="stop-color:#81d4fa;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#b3e5fc;stop-opacity:0.8"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4caf50;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#2e7d32;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#29b6f6;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#0277bd;stop-opacity:0.8"/>
+    </linearGradient>
+    <linearGradient id="tent1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="tent2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#e67e22;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="fire" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1"/>
+      <stop offset="40%" style="stop-color:#f39c12;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#f1c40f;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <!-- Sky -->
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <!-- Sun -->
+  <circle cx="200" cy="100" r="55" fill="#f9e547"/>
+  <circle cx="200" cy="100" r="70" fill="none" stroke="#f9e547" stroke-width="2" opacity="0.3"/>
+  <!-- Sun rays -->
+  <g stroke="#f9e547" stroke-width="2.5" opacity="0.4">
+    <line x1="200" y1="25" x2="200" y2="10"/>
+    <line x1="253" y1="47" x2="263" y2="37"/>
+    <line x1="275" y1="100" x2="290" y2="100"/>
+    <line x1="253" y1="153" x2="263" y2="163"/>
+    <line x1="200" y1="175" x2="200" y2="190"/>
+    <line x1="147" y1="153" x2="137" y2="163"/>
+    <line x1="125" y1="100" x2="110" y2="100"/>
+    <line x1="147" y1="47" x2="137" y2="37"/>
+  </g>
+  <!-- Clouds -->
+  <g opacity="0.3" fill="white">
+    <ellipse cx="500" cy="70" rx="70" ry="25"/>
+    <ellipse cx="540" cy="60" rx="50" ry="20"/>
+    <ellipse cx="460" cy="65" rx="45" ry="18"/>
+    <ellipse cx="900" cy="90" rx="60" ry="22"/>
+    <ellipse cx="940" cy="82" rx="45" ry="18"/>
+  </g>
+  <!-- Sea in background -->
+  <rect x="0" y="340" width="1200" height="60" fill="url(#sea)"/>
+  <path d="M0,355 Q50,345 100,355 Q150,365 200,355 Q250,345 300,355 Q350,365 400,355 Q450,345 500,355 Q550,365 600,355 Q650,345 700,355 Q750,365 800,355 Q850,345 900,355 Q950,365 1000,355 Q1050,345 1100,355 Q1150,365 1200,355" fill="none" stroke="white" stroke-width="1.5" opacity="0.3"/>
+  <path d="M0,375 Q40,368 80,375 Q120,382 160,375 Q200,368 240,375 Q280,382 320,375 Q360,368 400,375 Q440,382 480,375 Q520,368 560,375 Q600,382 640,375 Q680,368 720,375 Q760,382 800,375 Q840,368 880,375 Q920,382 960,375 Q1000,368 1040,375 Q1080,382 1120,375 Q1160,368 1200,375" fill="none" stroke="white" stroke-width="1" opacity="0.2"/>
+  <!-- Ground / grass -->
+  <rect x="0" y="395" width="1200" height="235" fill="url(#ground)"/>
+  <!-- Sand strip between sea and grass -->
+  <rect x="0" y="390" width="1200" height="12" fill="#d4a847" opacity="0.4"/>
+  <!-- Pine trees - back row -->
+  <g opacity="0.5">
+    <!-- Tree 1 -->
+    <rect x="95" y="300" width="10" height="100" fill="#5D4037"/>
+    <polygon points="100,220 60,320 140,320" fill="#1b5e20"/>
+    <polygon points="100,250 65,330 135,330" fill="#2e7d32"/>
+    <!-- Tree 2 -->
+    <rect x="245" y="310" width="10" height="90" fill="#5D4037"/>
+    <polygon points="250,240 215,330 285,330" fill="#1b5e20"/>
+    <polygon points="250,265 220,340 280,340" fill="#2e7d32"/>
+  </g>
+  <!-- Pine trees - front row -->
+  <!-- Tree 3 (large) -->
+  <rect x="55" y="330" width="14" height="80" fill="#5D4037"/>
+  <polygon points="62,230 15,350 109,350" fill="#1b5e20"/>
+  <polygon points="62,260 22,360 102,360" fill="#2e7d32"/>
+  <polygon points="62,290 30,370 94,370" fill="#388e3c"/>
+  <!-- Tree 4 -->
+  <rect x="175" y="340" width="12" height="70" fill="#5D4037"/>
+  <polygon points="181,260 140,355 222,355" fill="#1b5e20"/>
+  <polygon points="181,285 148,365 214,365" fill="#2e7d32"/>
+  <!-- Tree 5 (right side) -->
+  <rect x="1055" y="320" width="14" height="85" fill="#5D4037"/>
+  <polygon points="1062,230 1015,340 1109,340" fill="#1b5e20"/>
+  <polygon points="1062,260 1022,355 1102,355" fill="#2e7d32"/>
+  <polygon points="1062,290 1030,365 1094,365" fill="#388e3c"/>
+  <!-- Tree 6 (right) -->
+  <rect x="1135" y="340" width="12" height="70" fill="#5D4037"/>
+  <polygon points="1141,265 1100,355 1182,355" fill="#1b5e20"/>
+  <polygon points="1141,290 1108,365 1174,365" fill="#2e7d32"/>
+  <!-- Main tent (red) -->
+  <polygon points="500,310 400,450 600,450" fill="url(#tent1)"/>
+  <polygon points="500,310 500,450 600,450" fill="#a93226" opacity="0.3"/>
+  <line x1="500" y1="310" x2="500" y2="450" stroke="#8b1a1a" stroke-width="1.5"/>
+  <!-- Tent opening -->
+  <polygon points="480,450 500,380 520,450" fill="#2c1810"/>
+  <!-- Second tent (orange, smaller, behind) -->
+  <polygon points="750,345 680,450 820,450" fill="url(#tent2)"/>
+  <polygon points="750,345 750,450 820,450" fill="#d35400" opacity="0.3"/>
+  <line x1="750" y1="345" x2="750" y2="450" stroke="#a04000" stroke-width="1.5"/>
+  <polygon points="735,450 750,400 765,450" fill="#2c1810"/>
+  <!-- Campfire -->
+  <g transform="translate(620, 435)">
+    <!-- Logs -->
+    <rect x="-20" y="5" width="40" height="8" rx="3" fill="#5D4037" transform="rotate(-15,0,9)"/>
+    <rect x="-20" y="5" width="40" height="8" rx="3" fill="#6D4C41" transform="rotate(15,0,9)"/>
+    <!-- Fire -->
+    <path d="M0,-30 Q10,-15 5,0 Q0,-5 -5,0 Q-10,-15 0,-30 Z" fill="url(#fire)"/>
+    <path d="M-5,-20 Q0,-10 -3,0 Q-5,-5 -8,0 Q-12,-10 -5,-20 Z" fill="#f39c12" opacity="0.8"/>
+    <path d="M5,-22 Q10,-12 7,0 Q5,-5 3,0 Q0,-12 5,-22 Z" fill="#f39c12" opacity="0.8"/>
+    <!-- Sparks -->
+    <circle cx="-8" cy="-35" r="2" fill="#f1c40f" opacity="0.6"/>
+    <circle cx="6" cy="-40" r="1.5" fill="#f39c12" opacity="0.5"/>
+    <circle cx="2" cy="-45" r="1" fill="#f1c40f" opacity="0.4"/>
+  </g>
+  <!-- Grass tufts -->
+  <g fill="#388e3c" opacity="0.5">
+    <path d="M350,450 Q352,435 355,450 Q358,430 361,450"/>
+    <path d="M850,445 Q852,432 855,445 Q858,428 861,445"/>
+    <path d="M950,450 Q953,438 956,450"/>
+    <path d="M300,455 Q303,442 306,455 Q309,438 312,455"/>
+  </g>
+  <!-- Stars/geometric decorations -->
+  <rect x="400" y="40" width="8" height="8" fill="white" opacity="0.2" transform="rotate(45,404,44)"/>
+  <rect x="700" y="30" width="6" height="6" fill="white" opacity="0.15" transform="rotate(45,703,33)"/>
+  <circle cx="1100" cy="50" r="3" fill="white" opacity="0.2"/>
+  <!-- Text -->
+  <text x="350" y="160" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="bold" fill="white" letter-spacing="4">
+    <tspan>CAMPING FRANCE</tspan>
+  </text>
+  <rect x="350" y="178" width="350" height="4" rx="2" fill="white" opacity="0.5"/>
+  <text x="350" y="240" font-family="Arial, Helvetica, sans-serif" font-size="40" fill="white" opacity="0.9" letter-spacing="4">Bord de Mer 2026</text>
+  <!-- Badge -->
+  <rect x="350" y="260" width="180" height="34" rx="17" fill="white" opacity="0.2"/>
+  <text x="440" y="283" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">NATURE &amp; PLAGE</text>
+</svg>

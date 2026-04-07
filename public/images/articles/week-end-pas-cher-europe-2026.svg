@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4C1D95"/>
+      <stop offset="50%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+    <linearGradient id="skyline" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Decorative circles -->
+  <circle cx="1050" cy="100" r="120" fill="#A78BFA" opacity="0.15"/>
+  <circle cx="150" cy="500" r="80" fill="#C4B5FD" opacity="0.12"/>
+  <circle cx="900" cy="450" r="60" fill="#DDD6FE" opacity="0.1"/>
+  <!-- Stars -->
+  <circle cx="200" cy="80" r="3" fill="#EDE9FE" opacity="0.8"/>
+  <circle cx="350" cy="120" r="2" fill="#EDE9FE" opacity="0.6"/>
+  <circle cx="500" cy="60" r="3" fill="#EDE9FE" opacity="0.7"/>
+  <circle cx="750" cy="90" r="2" fill="#EDE9FE" opacity="0.5"/>
+  <circle cx="1000" cy="150" r="3" fill="#EDE9FE" opacity="0.6"/>
+  <circle cx="100" cy="180" r="2" fill="#EDE9FE" opacity="0.7"/>
+  <!-- City skyline -->
+  <!-- Building 1 - tall tower -->
+  <rect x="80" y="340" width="60" height="290" rx="2" fill="url(#skyline)" opacity="0.7"/>
+  <rect x="95" y="320" width="30" height="20" rx="2" fill="url(#skyline)" opacity="0.7"/>
+  <rect x="105" y="290" width="10" height="30" fill="#A78BFA" opacity="0.7"/>
+  <!-- Building 1 windows -->
+  <rect x="92" y="360" width="12" height="15" rx="1" fill="#EDE9FE" opacity="0.4"/>
+  <rect x="112" y="360" width="12" height="15" rx="1" fill="#EDE9FE" opacity="0.3"/>
+  <rect x="92" y="390" width="12" height="15" rx="1" fill="#EDE9FE" opacity="0.3"/>
+  <rect x="112" y="390" width="12" height="15" rx="1" fill="#EDE9FE" opacity="0.4"/>
+  <rect x="92" y="420" width="12" height="15" rx="1" fill="#EDE9FE" opacity="0.4"/>
+  <rect x="112" y="420" width="12" height="15" rx="1" fill="#EDE9FE" opacity="0.3"/>
+  <!-- Building 2 -->
+  <rect x="160" y="390" width="80" height="240" rx="2" fill="#7C3AED" opacity="0.6"/>
+  <rect x="172" y="410" width="14" height="18" rx="1" fill="#EDE9FE" opacity="0.3"/>
+  <rect x="195" y="410" width="14" height="18" rx="1" fill="#EDE9FE" opacity="0.4"/>
+  <rect x="218" y="410" width="14" height="18" rx="1" fill="#EDE9FE" opacity="0.3"/>
+  <rect x="172" y="445" width="14" height="18" rx="1" fill="#EDE9FE" opacity="0.4"/>
+  <rect x="195" y="445" width="14" height="18" rx="1" fill="#EDE9FE" opacity="0.3"/>
+  <rect x="218" y="445" width="14" height="18" rx="1" fill="#EDE9FE" opacity="0.4"/>
+  <!-- Building 3 - church/dome -->
+  <rect x="260" y="410" width="50" height="220" rx="2" fill="url(#skyline)" opacity="0.65"/>
+  <ellipse cx="285" cy="410" rx="25" ry="15" fill="url(#skyline)" opacity="0.65"/>
+  <line x1="285" y1="395" x2="285" y2="375" stroke="#C4B5FD" stroke-width="3" opacity="0.6"/>
+  <line x1="278" y1="382" x2="292" y2="382" stroke="#C4B5FD" stroke-width="3" opacity="0.6"/>
+  <!-- Building 4 - Eiffel-like -->
+  <polygon points="350,300 370,630 380,630 365,300" fill="#A78BFA" opacity="0.5"/>
+  <polygon points="410,300 390,630 380,630 395,300" fill="#A78BFA" opacity="0.5"/>
+  <rect x="355" y="400" width="50" height="6" rx="1" fill="#C4B5FD" opacity="0.5"/>
+  <rect x="360" y="480" width="40" height="5" rx="1" fill="#C4B5FD" opacity="0.5"/>
+  <rect x="365" y="340" width="30" height="5" rx="1" fill="#C4B5FD" opacity="0.5"/>
+  <!-- Building 5 -->
+  <rect x="430" y="420" width="70" height="210" rx="2" fill="#7C3AED" opacity="0.55"/>
+  <rect x="442" y="440" width="12" height="15" rx="1" fill="#EDE9FE" opacity="0.3"/>
+  <rect x="462" y="440" width="12" height="15" rx="1" fill="#EDE9FE" opacity="0.4"/>
+  <rect x="480" y="440" width="12" height="15" rx="1" fill="#EDE9FE" opacity="0.3"/>
+  <!-- Building 6 -->
+  <rect x="520" y="380" width="55" height="250" rx="2" fill="url(#skyline)" opacity="0.6"/>
+  <rect x="532" y="400" width="10" height="12" rx="1" fill="#EDE9FE" opacity="0.35"/>
+  <rect x="550" y="400" width="10" height="12" rx="1" fill="#EDE9FE" opacity="0.35"/>
+  <!-- Airplane -->
+  <g transform="translate(820, 180) rotate(-15)">
+    <ellipse cx="0" cy="0" rx="45" ry="10" fill="#EDE9FE" opacity="0.9"/>
+    <polygon points="-15,-10 -15,-35 5,-10" fill="#EDE9FE" opacity="0.85"/>
+    <polygon points="25,-5 25,-18 40,-5" fill="#EDE9FE" opacity="0.85"/>
+    <polygon points="-10,5 -10,20 5,5" fill="#EDE9FE" opacity="0.8"/>
+    <polygon points="-10,-5 -10,-15 5,-5" fill="#EDE9FE" opacity="0.8"/>
+  </g>
+  <!-- Airplane trail -->
+  <line x1="780" y1="210" x2="700" y2="240" stroke="#EDE9FE" stroke-width="2" stroke-dasharray="8,6" opacity="0.4"/>
+  <line x1="695" y1="242" x2="620" y2="268" stroke="#EDE9FE" stroke-width="1.5" stroke-dasharray="6,8" opacity="0.3"/>
+  <!-- Main text -->
+  <text x="750" y="350" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Week-ends Europe</text>
+  <!-- Price badge -->
+  <rect x="620" y="400" width="260" height="80" rx="40" fill="#F59E0B" opacity="0.95"/>
+  <text x="750" y="455" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Des 139&#8364;</text>
+  <!-- Subtitle -->
+  <text x="750" y="540" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#DDD6FE" text-anchor="middle">Les meilleures offres city trips 2026</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a237e"/>
+      <stop offset="45%" style="stop-color:#2c3e50"/>
+      <stop offset="100%" style="stop-color:#e65100"/>
+    </linearGradient>
+    <linearGradient id="volcano" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a0e0e"/>
+      <stop offset="100%" style="stop-color:#2c3e50"/>
+    </linearGradient>
+    <linearGradient id="lava" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e65100"/>
+      <stop offset="100%" style="stop-color:#bf360c;stop-opacity:0.5"/>
+    </linearGradient>
+    <linearGradient id="ocean" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d47a1;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#1a237e;stop-opacity:0.8"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Stars -->
+  <circle cx="100" cy="60" r="2" fill="#fff" opacity="0.6"/>
+  <circle cx="250" cy="40" r="1.5" fill="#fff" opacity="0.5"/>
+  <circle cx="400" cy="80" r="2" fill="#fff" opacity="0.4"/>
+  <circle cx="550" cy="30" r="1.5" fill="#fff" opacity="0.6"/>
+  <circle cx="700" cy="70" r="2" fill="#fff" opacity="0.5"/>
+  <circle cx="850" cy="50" r="1.5" fill="#fff" opacity="0.4"/>
+  <circle cx="1050" cy="60" r="2" fill="#fff" opacity="0.5"/>
+  <circle cx="150" cy="120" r="1" fill="#fff" opacity="0.3"/>
+  <circle cx="350" cy="130" r="1.5" fill="#fff" opacity="0.3"/>
+  <!-- Sun (setting) -->
+  <circle cx="1000" cy="180" r="80" fill="#e65100" opacity="0.7"/>
+  <circle cx="1000" cy="180" r="60" fill="#ff8f00" opacity="0.8"/>
+  <circle cx="1000" cy="180" r="40" fill="#ffc107" opacity="0.9"/>
+  <!-- Volcano shape left -->
+  <polygon points="50,500 250,200 450,500" fill="url(#volcano)" opacity="0.8"/>
+  <polygon points="220,230 250,200 280,230" fill="url(#lava)" opacity="0.6"/>
+  <!-- Volcano shape right -->
+  <polygon points="700,500 900,250 1100,500" fill="url(#volcano)" opacity="0.6"/>
+  <polygon points="870,280 900,250 930,280" fill="url(#lava)" opacity="0.5"/>
+  <!-- Ocean waves -->
+  <path d="M0,500 Q100,480 200,500 Q300,520 400,500 Q500,480 600,500 Q700,520 800,500 Q900,480 1000,500 Q1100,520 1200,500 L1200,630 L0,630 Z" fill="url(#ocean)"/>
+  <path d="M0,530 Q150,510 300,530 Q450,550 600,530 Q750,510 900,530 Q1050,550 1200,530 L1200,630 L0,630 Z" fill="#0d47a1" opacity="0.5"/>
+  <!-- Wave highlights -->
+  <path d="M100,510 Q200,500 300,510" stroke="#fff" stroke-width="2" fill="none" opacity="0.2"/>
+  <path d="M500,505 Q600,495 700,505" stroke="#fff" stroke-width="2" fill="none" opacity="0.2"/>
+  <path d="M800,515 Q900,505 1000,515" stroke="#fff" stroke-width="2" fill="none" opacity="0.15"/>
+  <!-- Text -->
+  <text x="600" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="78" font-weight="bold" fill="#fff">
+    Iles Canaries
+  </text>
+  <rect x="340" y="365" width="520" height="55" rx="27" fill="#e65100" opacity="0.8"/>
+  <text x="600" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#fff">
+    Soleil toute l'annee
+  </text>
+  <!-- Decorative line -->
+  <rect x="440" y="300" width="320" height="4" rx="2" fill="#ffc107" opacity="0.4"/>
+</svg>

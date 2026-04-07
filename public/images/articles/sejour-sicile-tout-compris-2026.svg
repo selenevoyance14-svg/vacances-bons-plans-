@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C2410C"/>
+      <stop offset="40%" stop-color="#EA580C"/>
+      <stop offset="70%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="volcano" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#78350F"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Sun -->
+  <circle cx="950" cy="120" r="80" fill="#FCD34D" opacity="0.9"/>
+  <circle cx="950" cy="120" r="65" fill="#FBBF24" opacity="0.95"/>
+  <!-- Sun rays -->
+  <line x1="950" y1="20" x2="950" y2="0" stroke="#FCD34D" stroke-width="4" opacity="0.5"/>
+  <line x1="1030" y1="50" x2="1050" y2="35" stroke="#FCD34D" stroke-width="4" opacity="0.5"/>
+  <line x1="1050" y1="120" x2="1075" y2="120" stroke="#FCD34D" stroke-width="4" opacity="0.5"/>
+  <line x1="1030" y1="190" x2="1050" y2="205" stroke="#FCD34D" stroke-width="4" opacity="0.5"/>
+  <line x1="870" y1="50" x2="850" y2="35" stroke="#FCD34D" stroke-width="4" opacity="0.5"/>
+  <!-- Volcano (Etna) -->
+  <polygon points="100,630 250,280 400,630" fill="url(#volcano)" opacity="0.9"/>
+  <polygon points="200,350 250,280 300,350" fill="#7C2D12" opacity="0.7"/>
+  <!-- Smoke from volcano -->
+  <circle cx="250" cy="255" r="20" fill="#D1D5DB" opacity="0.4"/>
+  <circle cx="235" cy="235" r="18" fill="#D1D5DB" opacity="0.35"/>
+  <circle cx="260" cy="225" r="22" fill="#D1D5DB" opacity="0.3"/>
+  <circle cx="245" cy="205" r="16" fill="#D1D5DB" opacity="0.25"/>
+  <circle cx="265" cy="195" r="14" fill="#D1D5DB" opacity="0.2"/>
+  <!-- Sea waves -->
+  <rect x="0" y="480" width="1200" height="150" fill="url(#sea)" opacity="0.8"/>
+  <path d="M0,480 Q50,465 100,480 Q150,495 200,480 Q250,465 300,480 Q350,495 400,480 Q450,465 500,480 Q550,495 600,480 Q650,465 700,480 Q750,495 800,480 Q850,465 900,480 Q950,495 1000,480 Q1050,465 1100,480 Q1150,495 1200,480 L1200,500 L0,500 Z" fill="#60A5FA" opacity="0.6"/>
+  <path d="M0,510 Q60,498 120,510 Q180,522 240,510 Q300,498 360,510 Q420,522 480,510 Q540,498 600,510 Q660,522 720,510 Q780,498 840,510 Q900,522 960,510 Q1020,498 1080,510 Q1140,522 1200,510 L1200,530 L0,530 Z" fill="#3B82F6" opacity="0.4"/>
+  <!-- Lemon -->
+  <g transform="translate(480, 450)">
+    <ellipse cx="0" cy="0" rx="35" ry="28" fill="#FDE047" opacity="0.95" transform="rotate(-20)"/>
+    <ellipse cx="0" cy="0" rx="25" ry="18" fill="#FEF08A" opacity="0.5" transform="rotate(-20)"/>
+    <!-- Leaf on lemon -->
+    <ellipse cx="25" cy="-22" rx="15" ry="7" fill="#22C55E" opacity="0.8" transform="rotate(30 25 -22)"/>
+    <line x1="18" y1="-18" x2="32" y2="-26" stroke="#16A34A" stroke-width="1.5" opacity="0.6"/>
+  </g>
+  <!-- Second lemon -->
+  <g transform="translate(550, 480)">
+    <ellipse cx="0" cy="0" rx="25" ry="20" fill="#FDE047" opacity="0.8" transform="rotate(10)"/>
+    <ellipse cx="0" cy="0" rx="17" ry="12" fill="#FEF08A" opacity="0.4" transform="rotate(10)"/>
+  </g>
+  <!-- Main text -->
+  <text x="700" y="280" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="bold" fill="#FFFFFF" text-anchor="middle">
+    <tspan>Sicile Tout Compris</tspan>
+  </text>
+  <!-- Price badge -->
+  <rect x="580" y="310" width="240" height="75" rx="38" fill="#DC2626" opacity="0.95"/>
+  <text x="700" y="362" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Des 479&#8364;</text>
+  <!-- Subtitle -->
+  <text x="700" y="435" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#FEF3C7" text-anchor="middle">Plages, culture et gastronomie italienne</text>
+</svg>

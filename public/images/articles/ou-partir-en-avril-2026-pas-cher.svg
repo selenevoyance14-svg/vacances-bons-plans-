@@ -1,0 +1,35 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0284c7;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Sun -->
+  <circle cx="950" cy="150" r="80" fill="#f59e0b" opacity="0.9"/>
+  <circle cx="950" cy="150" r="60" fill="#fbbf24"/>
+  <!-- Clouds -->
+  <ellipse cx="200" cy="120" rx="90" ry="35" fill="white" opacity="0.3"/>
+  <ellipse cx="260" cy="110" rx="70" ry="30" fill="white" opacity="0.25"/>
+  <ellipse cx="700" cy="80" rx="80" ry="30" fill="white" opacity="0.2"/>
+  <!-- Sea -->
+  <path d="M0 420 Q150 390 300 420 Q450 450 600 420 Q750 390 900 420 Q1050 450 1200 420 L1200 630 L0 630Z" fill="#0369a1" opacity="0.5"/>
+  <path d="M0 450 Q150 420 300 450 Q450 480 600 450 Q750 420 900 450 Q1050 480 1200 450 L1200 630 L0 630Z" fill="#075985" opacity="0.4"/>
+  <!-- Palm tree -->
+  <rect x="140" y="300" width="12" height="150" rx="4" fill="#92400e"/>
+  <path d="M146 300 Q100 260 60 290" stroke="#16a34a" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M146 300 Q180 250 230 270" stroke="#16a34a" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M146 300 Q130 240 90 250" stroke="#22c55e" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M146 300 Q170 240 200 240" stroke="#22c55e" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- Plane -->
+  <g transform="translate(800, 200) rotate(-15)">
+    <path d="M0 0 L-40 -10 L-60 0 L-40 5 Z" fill="white" opacity="0.8"/>
+    <path d="M-30 -2 L-50 -20 L-45 0Z" fill="white" opacity="0.6"/>
+  </g>
+  <!-- Text -->
+  <text x="600" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="bold" fill="white">Ou partir en avril 2026</text>
+  <text x="600" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" fill="#fde68a">10 destinations pas cher</text>
+  <rect x="440" y="440" width="320" height="50" rx="25" fill="#f59e0b"/>
+  <text x="600" y="474" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">A partir de 279€</text>
+</svg>
