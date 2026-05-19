@@ -152,10 +152,26 @@ export default function RootLayout({
                 <ul className="space-y-2 text-sm text-ocean-300">
                   <li>
                     <Link
+                      href="/a-propos"
+                      className="hover:text-white transition-colors"
+                    >
+                      À propos
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/contact"
+                      className="hover:text-white transition-colors"
+                    >
+                      Contact
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/mentions-legales"
                       className="hover:text-white transition-colors"
                     >
-                      Mentions legales
+                      Mentions légales
                     </Link>
                   </li>
                   <li>
@@ -163,12 +179,12 @@ export default function RootLayout({
                       href="/confidentialite"
                       className="hover:text-white transition-colors"
                     >
-                      Politique de confidentialite
+                      Politique de confidentialité
                     </Link>
                   </li>
                   <li>
                     <a
-                      href="mailto:bonsplansmania@gmail.com"
+                      href="mailto:contact@vacances-bons-plans.fr"
                       className="hover:text-white transition-colors"
                     >
                       contact@vacances-bons-plans.fr
