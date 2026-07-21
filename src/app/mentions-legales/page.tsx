@@ -21,7 +21,7 @@ export default function MentionsLegalesPage() {
           Éditeur du site
         </h2>
         <p>
-          Le site <strong>vacances-bons-plans.fr</strong> est édité par Yann L.,
+          Le site <strong>vacances-bons-plans.fr</strong> est édité par Nathalie L.,
           en qualité d&apos;éditrice indépendante.
         </p>
         <p>
@@ -34,7 +34,7 @@ export default function MentionsLegalesPage() {
           </a>
         </p>
         <p>
-          <strong>Directrice de la publication :</strong> Yann L.
+          <strong>Directrice de la publication :</strong> Nathalie L.
         </p>
 
         <h2 className="text-2xl font-bold text-ocean-800 mt-8 mb-3">

@@ -33,7 +33,7 @@ export default function ConfidentialitePage() {
           Responsable du traitement
         </h2>
         <p>
-          Yann L., éditrice du site vacances-bons-plans.fr
+          Nathalie L., éditrice du site vacances-bons-plans.fr
           <br />
           Contact :{" "}
           <a

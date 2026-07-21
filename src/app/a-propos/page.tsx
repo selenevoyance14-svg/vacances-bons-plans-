@@ -162,7 +162,7 @@ export default function AProposPage() {
           </p>
 
           <p className="mt-8 text-slate-500 italic">
-            — Yann, fondatrice de Vacances Bons Plans
+            — Nathalie, fondatrice de Vacances Bons Plans
           </p>
         </div>
       </div>
