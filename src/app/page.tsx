@@ -1,167 +1,217 @@
+import Image from "next/image";
 import Link from "next/link";
+import ArticleCard from "@/app/components/ArticleCard";
 import { getArticles } from "@/lib/articles";
 
-const CATEGORIES = [
+const UNIVERSES = [
   {
-    slug: "destinations",
-    label: "Destinations",
-    icon: "🌍",
-    description: "Guides complets par destination",
+    href: "/guides",
+    number: "01",
+    title: "Mobil-home & camping",
+    description: "Acheter, louer, choisir son camping et comprendre les vrais coûts.",
   },
   {
-    slug: "bons-plans",
-    label: "Bons Plans",
-    icon: "🏷️",
-    description: "Sejours et voyages a prix reduits",
+    href: "/destinations",
+    number: "02",
+    title: "Destinations en famille",
+    description: "Des régions accessibles, des budgets réalistes et les bonnes périodes.",
   },
   {
-    slug: "guides",
-    label: "Guides",
-    icon: "📖",
-    description: "Conseils et astuces voyage",
+    href: "/bons-plans",
+    number: "03",
+    title: "Vacances au bon prix",
+    description: "Des offres datées et des pistes concrètes pour partir sans se ruiner.",
   },
   {
-    slug: "comparatifs",
-    label: "Comparatifs",
-    icon: "⚖️",
-    description: "Comparatifs agences et offres",
+    href: "/comparatifs",
+    number: "04",
+    title: "Équipement utile",
+    description: "Valises, accessoires et matériel comparés sans listes interminables.",
   },
 ];
 
 export default function Home() {
-  const articles = getArticles();
-  const featured = articles.filter((a) => a.featured).slice(0, 3);
+  const articles = getArticles().filter((article) => article.category !== "concours");
+  const mobilHomeGuides = articles
+    .filter((article) =>
+      article.tags.some((tag) => ["mobil-home", "camping"].includes(tag.toLowerCase())),
+    )
+    .slice(0, 3);
+  const amazonGuides = articles
+    .filter((article) =>
+      article.tags.some((tag) => tag.toLowerCase() === "amazon"),
+    )
+    .slice(0, 3);
   const latest = articles.slice(0, 6);
+  const destinationCount = articles.filter(
+    (article) => article.category === "destination",
+  ).length;
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-ocean-600 via-ocean-700 to-ocean-900 text-white py-20 sm:py-28">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="text-4xl sm:text-6xl font-extrabold mb-6 leading-tight">
-            Trouvez votre{" "}
-            <span className="text-sun-400">voyage pas cher</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-ocean-200 max-w-2xl mx-auto mb-10">
-            Nous comparons les offres Cdiscount Voyage, Havas, Auchan et Leclerc
-            Voyages pour vous trouver le meilleur sejour au meilleur prix.
+      <section className="home-hero">
+        <div className="home-hero-media">
+          <Image
+            src="/images/hero-vacances-famille-mobil-home.webp"
+            alt="Vacances en famille dans un mobil-home au bord de la Méditerranée"
+            fill
+            priority
+            sizes="100vw"
+          />
+        </div>
+        <div className="home-hero-shade" />
+        <div className="site-container home-hero-content">
+          <p className="eyebrow eyebrow-light">Vacances familiales · camping · plein air</p>
+          <h1>Partir mieux.<br />Dépenser juste.</h1>
+          <p className="home-hero-lead">
+            Des guides honnêtes pour choisir un mobil-home, trouver une destination
+            familiale et éviter les mauvaises surprises avant de réserver.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/destinations" className="btn-sun text-lg px-8 py-4">
-              Explorer les destinations
+          <div className="hero-actions">
+            <Link href="/guides" className="button button-primary">
+              Découvrir nos guides <span aria-hidden>→</span>
             </Link>
-            <Link
-              href="/bons-plans"
-              className="btn-ocean bg-white/10 hover:bg-white/20 text-lg px-8 py-4"
-            >
-              Voir les bons plans
+            <Link href="/destinations" className="button button-ghost">
+              Trouver une destination
             </Link>
           </div>
         </div>
+        <div className="hero-note">
+          <span>Conseils indépendants</span>
+          <span>Budgets expliqués</span>
+          <span>Informations datées</span>
+        </div>
       </section>
 
-      {/* Categories */}
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {CATEGORIES.map((cat) => (
-              <Link
-                key={cat.slug}
-                href={`/${cat.slug}`}
-                className="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow border border-slate-100"
-              >
-                <span className="text-3xl block mb-3">{cat.icon}</span>
-                <h3 className="font-bold text-ocean-800 mb-1">{cat.label}</h3>
-                <p className="text-xs text-slate-500">{cat.description}</p>
+      <section className="intro-band">
+        <div className="site-container intro-band-grid">
+          <p className="eyebrow">Notre ligne éditoriale</p>
+          <div>
+            <h2>Les vacances ne devraient pas commencer par une mauvaise surprise.</h2>
+            <p>
+              Nous transformons les prix, les conditions et les options compliquées
+              en conseils simples. Ici, pas de faux comparateur : chaque article
+              vous aide à prendre une décision précise.
+            </p>
+          </div>
+        </div>
+        <div className="site-container proof-strip" aria-label="Nos engagements">
+          <div><strong>{articles.length}</strong><span>guides disponibles</span></div>
+          <div><strong>{destinationCount}</strong><span>destinations étudiées</span></div>
+          <div><strong>100 %</strong><span>accès gratuit</span></div>
+          <div><strong>0</strong><span>faux prix barrés</span></div>
+        </div>
+      </section>
+
+      <section className="section universes-section">
+        <div className="site-container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Explorer</p>
+              <h2>Préparez vos vacances à votre façon</h2>
+            </div>
+            <Link href="/recherche" className="text-link">Rechercher sur le site →</Link>
+          </div>
+          <div className="universe-grid">
+            {UNIVERSES.map((universe) => (
+              <Link key={universe.number} href={universe.href} className="universe-card">
+                <span className="universe-number">{universe.number}</span>
+                <h3>{universe.title}</h3>
+                <p>{universe.description}</p>
+                <span className="universe-arrow" aria-hidden>↗</span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured */}
-      {featured.length > 0 && (
-        <section className="py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <h2 className="text-3xl font-bold text-ocean-900 mb-8">
-              A la une
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {featured.map((article) => (
-                <Link
-                  key={article.slug}
-                  href={`/article/${article.slug}`}
-                  className="group bg-white rounded-xl overflow-hidden border border-slate-100 hover:shadow-lg transition-shadow"
-                >
-                  <div className="h-48 bg-gradient-to-br from-ocean-400 to-ocean-600 flex items-center justify-center">
-                    <span className="text-5xl opacity-80">
-                      {article.category === "destination"
-                        ? "🌍"
-                        : article.category === "bon-plan"
-                          ? "🏷️"
-                          : article.category === "comparatif"
-                            ? "⚖️"
-                            : "📖"}
-                    </span>
-                  </div>
-                  <div className="p-5">
-                    <span className="text-xs font-semibold text-ocean-600 uppercase tracking-wide">
-                      {article.category}
-                    </span>
-                    <h3 className="font-bold text-slate-900 mt-2 mb-2 group-hover:text-ocean-600 transition-colors line-clamp-2">
-                      {article.title}
-                    </h3>
-                    <p className="text-sm text-slate-500 line-clamp-2">
-                      {article.description}
-                    </p>
-                  </div>
-                </Link>
+      {mobilHomeGuides.length > 0 ? (
+        <section className="section focus-section">
+          <div className="site-container">
+            <div className="section-heading section-heading-light">
+              <div>
+                <p className="eyebrow eyebrow-light">Dossier du moment</p>
+                <h2>Le mobil-home, sans les frais cachés</h2>
+              </div>
+              <Link href="/guides" className="text-link text-link-light">
+                Tous les guides →
+              </Link>
+            </div>
+            <div className="focus-grid">
+              {mobilHomeGuides.map((article, index) => (
+                <ArticleCard key={article.slug} article={article} featured={index === 0} />
               ))}
             </div>
           </div>
         </section>
-      )}
+      ) : null}
 
-      {/* Latest */}
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl font-bold text-ocean-900 mb-8">
-            Derniers articles
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {latest.map((article) => (
-              <Link
-                key={article.slug}
-                href={`/article/${article.slug}`}
-                className="group bg-white rounded-xl p-6 border border-slate-100 hover:shadow-lg transition-shadow"
-              >
-                <span className="text-xs font-semibold text-sun-600 uppercase tracking-wide">
-                  {article.category}
-                </span>
-                <h3 className="font-bold text-slate-900 mt-2 mb-2 group-hover:text-ocean-600 transition-colors line-clamp-2">
-                  {article.title}
-                </h3>
-                <p className="text-sm text-slate-500 line-clamp-2 mb-3">
-                  {article.description}
+      {amazonGuides.length > 0 ? (
+        <section className="section shopping-section">
+          <div className="site-container">
+            <div className="shopping-intro">
+              <div>
+                <p className="eyebrow">La sélection utile</p>
+                <h2>Bien équipé, sans remplir le coffre</h2>
+              </div>
+              <div>
+                <p>
+                  Nos comparatifs d&apos;accessoires pour le camping et le voyage :
+                  des critères concrets, plusieurs budgets et seulement du matériel
+                  qui répond à un vrai besoin.
                 </p>
-                <span className="text-xs text-slate-400">{article.date}</span>
+                <small>
+                  Certains liens sont affiliés Amazon : le prix reste identique pour
+                  vous et une commission peut soutenir le site.
+                </small>
+              </div>
+            </div>
+            <div className="article-grid">
+              {amazonGuides.map((article) => (
+                <ArticleCard key={article.slug} article={article} />
+              ))}
+            </div>
+            <div className="shopping-footer">
+              <Link href="/comparatifs" className="button button-primary">
+                Voir les comparatifs équipement <span aria-hidden>→</span>
               </Link>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="section latest-section">
+        <div className="site-container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">À lire maintenant</p>
+              <h2>Nos derniers guides</h2>
+            </div>
+            <Link href="/guides" className="text-link">Tout consulter →</Link>
+          </div>
+          <div className="article-grid">
+            {latest.map((article) => (
+              <ArticleCard key={article.slug} article={article} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Trust */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-2xl font-bold text-ocean-900 mb-6">
-            Nous comparons les meilleurs voyagistes
-          </h2>
-          <div className="flex flex-wrap justify-center gap-8 text-slate-500 font-semibold">
-            <span>Cdiscount Voyage</span>
-            <span>Havas Voyages</span>
-            <span>Auchan Voyages</span>
-            <span>Leclerc Voyages</span>
+      <section className="manifesto">
+        <div className="site-container manifesto-grid">
+          <div>
+            <p className="eyebrow eyebrow-light">La promesse</p>
+            <h2>Moins de listes. Plus de réponses.</h2>
+          </div>
+          <div>
+            <p>
+              Vacances Bons Plans est un guide indépendant. Nous indiquons ce qui
+              coûte réellement de l’argent, ce qui mérite votre attention et ce
+              qui peut attendre.
+            </p>
+            <Link href="/a-propos" className="button button-light">
+              Découvrir notre méthode <span aria-hidden>→</span>
+            </Link>
           </div>
         </div>
       </section>
