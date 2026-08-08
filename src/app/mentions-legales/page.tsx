@@ -77,12 +77,10 @@ export default function MentionsLegalesPage() {
           Liens d&apos;affiliation
         </h2>
         <p>
-          Ce site participe au programme Partenaires Amazon EU, un programme
-          d&apos;affiliation conçu pour permettre à des sites de percevoir une
-          rémunération grâce à la création de liens vers Amazon.fr. Certains
-          liens présents sur ce site sont des liens affiliés : si vous effectuez
-          un achat après avoir cliqué sur l&apos;un de ces liens, nous pouvons
-          percevoir une commission, sans surcoût pour vous.
+          En tant que Partenaire Amazon, je réalise un bénéfice sur les achats
+          remplissant les conditions requises. Certains liens présents sur ce
+          site sont des liens affiliés et peuvent générer une commission, sans
+          modifier le prix payé par l&apos;utilisateur.
         </p>
         <p>
           Cette rémunération ne modifie en aucun cas notre ligne éditoriale ni
@@ -95,10 +93,12 @@ export default function MentionsLegalesPage() {
         </h2>
         <p>
           Les informations publiées sur vacances-bons-plans.fr sont fournies à
-          titre indicatif. Les prix, disponibilités et conditions des offres
-          présentées peuvent évoluer à tout moment sans préavis. Nous invitons
-          les lecteurs à vérifier les informations sur les sites des marchands
-          avant tout achat ou réservation.
+          titre indicatif. Les budgets et fourchettes de prix contenus dans les
+          guides sont des estimations éditoriales établies à leur date de
+          publication et ne constituent pas des prix Amazon en temps réel. Les
+          prix, disponibilités et conditions peuvent évoluer à tout moment. Nous
+          invitons les lecteurs à vérifier les informations sur le site du
+          marchand avant tout achat ou réservation.
         </p>
         <p>
           L&apos;éditeur ne saurait être tenu responsable des erreurs ou

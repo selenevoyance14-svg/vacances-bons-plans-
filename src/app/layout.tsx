@@ -110,13 +110,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <li><Link href="/a-propos">À propos</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
                 <li><Link href="/mentions-legales">Mentions légales</Link></li>
+                <li><Link href="/affiliation-amazon">Affiliation Amazon</Link></li>
                 <li><Link href="/confidentialite">Confidentialité</Link></li>
               </ul>
             </div>
           </div>
           <div className="site-container footer-bottom">
             <p>© 2026 Vacances Bons Plans</p>
-            <p>Certains liens peuvent être affiliés, sans surcoût pour vous.</p>
+            <p>En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.</p>
           </div>
         </footer>
       </body>

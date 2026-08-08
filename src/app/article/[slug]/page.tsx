@@ -3,10 +3,24 @@ import Link from "next/link";
 import ArticleCard from "@/app/components/ArticleCard";
 import { getArticles, getArticleBySlug } from "@/lib/articles";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import type { AnchorHTMLAttributes } from "react";
 
 type Props = {
   params: { slug: string };
 };
+
+function ArticleLink({ href = "", rel, ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) {
+  const isAmazon = href.includes("amazon.fr") || href.includes("amzn.to");
+
+  return (
+    <a
+      href={href}
+      {...props}
+      target={isAmazon ? "_blank" : props.target}
+      rel={isAmazon ? "sponsored nofollow noopener noreferrer" : rel}
+    />
+  );
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = getArticleBySlug(params.slug);
@@ -127,13 +141,14 @@ export default function ArticlePage({ params }: Props) {
             <aside className="affiliate-notice">
               <strong>Transparence</strong>
               <p>
-                Cet article contient des liens affiliés Amazon. Si vous achetez
-                après avoir cliqué, nous pouvons recevoir une petite commission,
-                sans surcoût pour vous. Nos conseils restent indépendants.
+                En tant que Partenaire Amazon, je réalise un bénéfice sur les achats
+                remplissant les conditions requises. Les budgets mentionnés sont des
+                estimations éditoriales à la date de publication, pas des prix Amazon
+                en temps réel. Vérifiez toujours le prix et la disponibilité sur Amazon.
               </p>
             </aside>
           ) : null}
-          <MDXRemote source={article.content} />
+          <MDXRemote source={article.content} components={{ a: ArticleLink }} />
         </div>
 
         <div className="article-bottom">

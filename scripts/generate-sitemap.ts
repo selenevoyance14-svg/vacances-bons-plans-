@@ -15,6 +15,7 @@ const staticPages = [
   { url: "/guides", priority: "0.8", changefreq: "weekly" },
   { url: "/comparatifs", priority: "0.8", changefreq: "weekly" },
   { url: "/mentions-legales", priority: "0.3", changefreq: "monthly" },
+  { url: "/affiliation-amazon", priority: "0.3", changefreq: "monthly" },
   { url: "/confidentialite", priority: "0.3", changefreq: "monthly" },
 ];
 
