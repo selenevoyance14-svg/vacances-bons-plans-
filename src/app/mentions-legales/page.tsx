@@ -14,15 +14,18 @@ export default function MentionsLegalesPage() {
           Mentions légales
         </h1>
         <p className="text-sm text-slate-500 mb-8">
-          Dernière mise à jour : 19 mai 2026
+          Dernière mise à jour : 18 août 2026
         </p>
 
         <h2 className="text-2xl font-bold text-ocean-800 mt-8 mb-3">
           Éditeur du site
         </h2>
         <p>
-          Le site <strong>vacances-bons-plans.fr</strong> est édité par Nathalie L.,
-          en qualité d&apos;éditrice indépendante.
+          Le site <strong>vacances-bons-plans.fr</strong> est édité par
+          <strong> Nathalie Lebrun</strong>, entrepreneur individuel.<br />
+          Adresse : 524 rue de la Tourrache, 83600 Fréjus, France.<br />
+          SIREN : 101 331 585.<br />
+          SIRET : 101 331 585 00014.
         </p>
         <p>
           <strong>Contact :</strong>{" "}
@@ -34,7 +37,7 @@ export default function MentionsLegalesPage() {
           </a>
         </p>
         <p>
-          <strong>Directrice de la publication :</strong> Nathalie L.
+          <strong>Directrice de la publication :</strong> Nathalie Lebrun.
         </p>
 
         <h2 className="text-2xl font-bold text-ocean-800 mt-8 mb-3">

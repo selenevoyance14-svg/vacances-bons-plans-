@@ -14,7 +14,7 @@ export default function ConfidentialitePage() {
           Politique de confidentialité
         </h1>
         <p className="text-sm text-slate-500 mb-8">
-          Dernière mise à jour : 19 mai 2026
+          Dernière mise à jour : 18 août 2026
         </p>
 
         <h2 className="text-2xl font-bold text-ocean-800 mt-8 mb-3">
@@ -33,7 +33,8 @@ export default function ConfidentialitePage() {
           Responsable du traitement
         </h2>
         <p>
-          Nathalie L., éditrice du site vacances-bons-plans.fr
+          Nathalie Lebrun, entrepreneur individuel, 524 rue de la Tourrache,
+          83600 Fréjus, France. SIREN : 101 331 585.
           <br />
           Contact :{" "}
           <a
