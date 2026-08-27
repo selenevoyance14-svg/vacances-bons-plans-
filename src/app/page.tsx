@@ -19,14 +19,14 @@ const UNIVERSES = [
   {
     href: "/bons-plans",
     number: "03",
-    title: "Vacances au bon prix",
-    description: "Des offres datées et des pistes concrètes pour partir sans se ruiner.",
+    title: "Séjours au bon prix",
+    description: "Campings, clubs et séjours à comparer avec leurs vraies conditions.",
   },
   {
-    href: "/comparatifs",
+    href: "/guides",
     number: "04",
-    title: "Équipement utile",
-    description: "Valises, accessoires et matériel comparés sans listes interminables.",
+    title: "Préparer sans stress",
+    description: "Budget, réservation, bagages et conseils utiles avant le départ.",
   },
 ];
 
@@ -34,15 +34,21 @@ export default function Home() {
   const articles = getArticles().filter((article) => article.category !== "concours");
   const mobilHomeGuides = articles
     .filter((article) =>
-      article.tags.some((tag) => ["mobil-home", "camping"].includes(tag.toLowerCase())),
+      article.tags.some((tag) => tag.toLowerCase() === "mobil-home"),
     )
     .slice(0, 3);
   const amazonGuides = articles
     .filter((article) =>
-      article.tags.some((tag) => tag.toLowerCase() === "amazon"),
+      article.tags.some((tag) => tag.toLowerCase() === "amazon") &&
+      /(valise|sac-a-dos|organisateur-valise|trousse-toilette|serviette-microfibre|adaptateur-prise)/.test(article.slug),
     )
     .slice(0, 3);
-  const latest = articles.slice(0, 6);
+  const latest = articles
+    .filter((article) =>
+      ["destination", "bon-plan"].includes(article.category) ||
+      article.tags.some((tag) => tag.toLowerCase() === "mobil-home"),
+    )
+    .slice(0, 6);
   const destinationCount = articles.filter(
     (article) => article.category === "destination",
   ).length;
@@ -80,6 +86,34 @@ export default function Home() {
           <span>Conseils indépendants</span>
           <span>Budgets expliqués</span>
           <span>Informations datées</span>
+        </div>
+      </section>
+
+      <section className="compare-strip" id="comparer">
+        <div className="site-container compare-strip-grid">
+          <div className="compare-copy">
+            <p className="eyebrow">Bientôt sur Vacances Bons Plans</p>
+            <h2>Comparez le séjour complet, pas seulement le prix d&apos;appel.</h2>
+            <p>
+              Nous préparons un moteur pour comparer campings, mobil-homes et
+              séjours familiaux. Prix total, dates, nombre de voyageurs et options :
+              les éléments utiles seront réunis avant de vous rediriger vers le partenaire.
+            </p>
+            <Link href="/bons-plans" className="button button-primary">
+              Voir les offres déjà analysées <span aria-hidden>→</span>
+            </Link>
+          </div>
+          <div className="compare-options" aria-label="Types de vacances bientôt comparables">
+            <Link href="/guides">
+              <span>01</span><strong>Camping & mobil-home</strong><small>Emplacement, location et frais annexes</small>
+            </Link>
+            <Link href="/bons-plans">
+              <span>02</span><strong>Séjours & tout compris</strong><small>Prix total et conditions de l&apos;offre</small>
+            </Link>
+            <Link href="/destinations">
+              <span>03</span><strong>Vacances en famille</strong><small>Destination, période et budget réaliste</small>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -151,14 +185,13 @@ export default function Home() {
           <div className="site-container">
             <div className="shopping-intro">
               <div>
-                <p className="eyebrow">La sélection utile</p>
-                <h2>Bien équipé, sans remplir le coffre</h2>
+                <p className="eyebrow">Les essentiels du départ</p>
+                <h2>Le bagage utile, sans achats superflus</h2>
               </div>
               <div>
                 <p>
-                  Nos comparatifs d&apos;accessoires pour le camping et le voyage :
-                  des critères concrets, plusieurs budgets et seulement du matériel
-                  qui répond à un vrai besoin.
+                  Valise, sac, rangement et adaptateur : une sélection resserrée sur
+                  les objets qui facilitent réellement un séjour en famille.
                 </p>
                 <small>
                   Certains liens sont affiliés Amazon : le prix reste identique pour
@@ -184,8 +217,8 @@ export default function Home() {
         <div className="site-container">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">À lire maintenant</p>
-              <h2>Nos derniers guides</h2>
+              <p className="eyebrow">Choisir et réserver</p>
+              <h2>Nos derniers guides vacances</h2>
             </div>
             <Link href="/guides" className="text-link">Tout consulter →</Link>
           </div>

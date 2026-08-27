@@ -12,11 +12,11 @@ const geist = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://vacances-bons-plans.fr"),
   title: {
-    default: "Vacances Bons Plans — Vacances familiales et mobil-homes",
+    default: "Vacances Bons Plans — Comparez séjours, campings et mobil-homes",
     template: "%s | Vacances Bons Plans",
   },
   description:
-    "Guides indépendants pour choisir un mobil-home, comparer les vrais coûts du camping et organiser des vacances familiales au bon prix.",
+    "Comparez séjours, campings et mobil-homes grâce à des guides indépendants sur les prix totaux, les conditions et les frais à prévoir.",
   alternates: { canonical: "/" },
   icons: { icon: "/favicon.svg" },
   verification: {
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
 const NAVIGATION = [
   { href: "/guides", label: "Mobil-home & guides" },
   { href: "/destinations", label: "Destinations" },
-  { href: "/bons-plans", label: "Bons plans" },
-  { href: "/comparatifs", label: "Comparatifs" },
+  { href: "/bons-plans", label: "Comparer un séjour" },
+  { href: "/comparatifs", label: "Essentiels voyage" },
 ];
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
