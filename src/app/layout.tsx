@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 };
 
 const NAVIGATION = [
-  { href: "/guides", label: "Mobil-home & guides" },
+  { href: "/mobil-home", label: "Mobil-homes" },
   { href: "/destinations", label: "Destinations" },
   { href: "/bons-plans", label: "Comparer un séjour" },
   { href: "/comparatifs", label: "Essentiels voyage" },
@@ -117,7 +117,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
           <div className="site-container footer-bottom">
             <p>© 2026 Vacances Bons Plans</p>
-            <p>En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.</p>
+            <p>Certains liens sont affiliés : une commission peut soutenir le site, sans surcoût pour vous.</p>
           </div>
         </footer>
       </body>

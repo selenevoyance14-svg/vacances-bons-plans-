@@ -11,6 +11,8 @@ const today = new Date().toISOString().split("T")[0];
 const staticPages = [
   { url: "", priority: "1.0", changefreq: "daily" },
   { url: "/destinations", priority: "0.8", changefreq: "weekly" },
+  { url: "/mobil-home", priority: "0.9", changefreq: "weekly" },
+  { url: "/mobil-home/var", priority: "0.9", changefreq: "weekly" },
   { url: "/bons-plans", priority: "0.8", changefreq: "weekly" },
   { url: "/guides", priority: "0.8", changefreq: "weekly" },
   { url: "/comparatifs", priority: "0.8", changefreq: "weekly" },

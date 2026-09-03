@@ -5,7 +5,7 @@ import { getArticles } from "@/lib/articles";
 
 const UNIVERSES = [
   {
-    href: "/guides",
+    href: "/mobil-home",
     number: "01",
     title: "Mobil-home & camping",
     description: "Acheter, louer, choisir son camping et comprendre les vrais coûts.",
@@ -99,12 +99,12 @@ export default function Home() {
               séjours familiaux. Prix total, dates, nombre de voyageurs et options :
               les éléments utiles seront réunis avant de vous rediriger vers le partenaire.
             </p>
-            <Link href="/bons-plans" className="button button-primary">
-              Voir les offres déjà analysées <span aria-hidden>→</span>
+            <Link href="/mobil-home" className="button button-primary">
+              Comparer les destinations <span aria-hidden>→</span>
             </Link>
           </div>
           <div className="compare-options" aria-label="Types de vacances bientôt comparables">
-            <Link href="/guides">
+            <Link href="/mobil-home">
               <span>01</span><strong>Camping & mobil-home</strong><small>Emplacement, location et frais annexes</small>
             </Link>
             <Link href="/bons-plans">
