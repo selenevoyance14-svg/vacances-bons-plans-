@@ -27,7 +27,7 @@ export const mobilHomeDestinations: MobilHomeDestination[] = [
     summary:
       "De longues plages, de nombreuses pistes cyclables et une offre très large pour les familles.",
     highlights: ["Plages", "Familles", "Vélo"],
-    available: false,
+    available: true,
   },
   {
     slug: "herault",
@@ -37,7 +37,7 @@ export const mobilHomeDestinations: MobilHomeDestination[] = [
     summary:
       "Des stations méditerranéennes animées et des séjours accessibles hors juillet-août.",
     highlights: ["Méditerranée", "Arrière-pays", "Hors saison"],
-    available: false,
+    available: true,
   },
   {
     slug: "landes",
@@ -47,7 +47,7 @@ export const mobilHomeDestinations: MobilHomeDestination[] = [
     summary:
       "Océan, grands lacs et campings sous les pins pour alterner baignade, vélo et nature.",
     highlights: ["Océan", "Lacs", "Forêt"],
-    available: false,
+    available: true,
   },
   {
     slug: "charente-maritime",
@@ -57,6 +57,6 @@ export const mobilHomeDestinations: MobilHomeDestination[] = [
     summary:
       "Îles, plages familiales et nombreuses possibilités de séjour sur la côte Atlantique.",
     highlights: ["Îles", "Plages familiales", "Atlantique"],
-    available: false,
+    available: true,
   },
 ];
