@@ -1,3 +1,5 @@
+import { moreSuncampOffers } from "@/lib/moreSuncampOffers";
+
 export type SuncampOffer = {
   id: string;
   name: string;
@@ -85,6 +87,7 @@ export const suncampVarOffers: SuncampOffer[] = [
 ];
 
 export const suncampOffersByDepartment: Record<string, SuncampOffer[]> = {
+  ...moreSuncampOffers,
   vendee: [
     {
       id: "100366",

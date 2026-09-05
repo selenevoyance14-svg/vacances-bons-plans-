@@ -27,14 +27,14 @@ export default function DepartmentMobilHomePage({ params }: PageProps) {
   const offers = suncampOffersByDepartment[params.department];
   if (!guide || !offers) notFound();
 
-  const lastUpdated = "4 septembre 2026";
+  const lastUpdated = "5 septembre 2026";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: `Campings avec mobil-homes en ${guide.name}`,
     description: guide.metaDescription,
     url: `https://vacances-bons-plans.fr/mobil-home/${guide.slug}`,
-    dateModified: "2026-09-04",
+    dateModified: "2026-09-05",
     breadcrumb: {
       "@type": "BreadcrumbList",
       itemListElement: [
@@ -152,7 +152,7 @@ export default function DepartmentMobilHomePage({ params }: PageProps) {
             ))}
           </div>
           <p className="partner-disclosure">
-            Sélection issue du flux Suncamp, contrôlé le 4 septembre 2026. Les prix et disponibilités changent selon les dates : vérifiez le total sur le site partenaire. Si vous réservez après avoir utilisé un lien, Vacances Bons Plans peut recevoir une commission, sans surcoût pour vous.
+            Sélection issue du flux Suncamp, contrôlé le 5 septembre 2026. Les prix et disponibilités changent selon les dates : vérifiez le total sur le site partenaire. Si vous réservez après avoir utilisé un lien, Vacances Bons Plans peut recevoir une commission, sans surcoût pour vous.
           </p>
         </div>
       </section>
