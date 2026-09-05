@@ -552,6 +552,22 @@ img {
   color: white;
 }
 
+.travel-card-visual img {
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.travel-card:hover .travel-card-visual img {
+  transform: scale(1.045);
+}
+
+.travel-card-image-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(12, 32, 29, 0.02) 35%, rgba(12, 32, 29, 0.78) 100%);
+}
+
 .travel-card-visual::before,
 .travel-card-visual::after {
   content: "";
@@ -574,15 +590,8 @@ img {
   right: 5px;
 }
 
-.travel-card-visual > span {
-  font-family: Georgia, serif;
-  font-size: 52px;
-  font-style: italic;
-  line-height: 1;
-}
-
 .travel-card-visual p {
-  z-index: 1;
+  z-index: 2;
   margin: 0;
   font-size: 11px;
   font-weight: 780;
@@ -1363,6 +1372,19 @@ img {
 .article-bottom {
   width: min(820px, calc(100% - 40px));
   margin-inline: auto;
+}
+
+.article-cover {
+  width: min(1120px, calc(100% - 40px));
+  aspect-ratio: 3 / 2;
+  position: relative;
+  margin: 46px auto 0;
+  overflow: hidden;
+  background: var(--sea-light);
+}
+
+.article-cover img {
+  object-fit: cover;
 }
 
 .article-breadcrumb {

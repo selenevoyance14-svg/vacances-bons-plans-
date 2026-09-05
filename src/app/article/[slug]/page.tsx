@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import ArticleCard from "@/app/components/ArticleCard";
 import { getArticles, getArticleBySlug } from "@/lib/articles";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import type { AnchorHTMLAttributes } from "react";
+import { getArticleImage, getArticleImageAlt } from "@/lib/articleImages";
 
 type Props = {
   params: { slug: string };
@@ -25,6 +27,7 @@ function ArticleLink({ href = "", rel, ...props }: AnchorHTMLAttributes<HTMLAnch
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = getArticleBySlug(params.slug);
   if (!article) return { title: "Article non trouve" };
+  const image = getArticleImage(article);
 
   return {
     title: article.seoTitle || article.title,
@@ -35,6 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: article.description,
       type: "article",
       publishedTime: article.date,
+      images: [{ url: image, alt: getArticleImageAlt(article) }],
     },
   };
 }
@@ -58,6 +62,7 @@ export default function ArticlePage({ params }: Props) {
   }
 
   const article = maybeArticle;
+  const articleImage = getArticleImage(article);
   const categoryLabels: Record<string, string> = {
     destination: "Destination",
     "bon-plan": "Bon plan",
@@ -99,6 +104,7 @@ export default function ArticlePage({ params }: Props) {
     datePublished: article.date,
     dateModified: article.date,
     mainEntityOfPage: `https://vacances-bons-plans.fr/article/${article.slug}`,
+    image: `https://vacances-bons-plans.fr${articleImage}`,
     author: {
       "@type": "Person",
       name: "Nathalie",
@@ -135,6 +141,16 @@ export default function ArticlePage({ params }: Props) {
             <span>{readingTime} min de lecture</span>
           </div>
         </header>
+
+        <figure className="article-cover">
+          <Image
+            src={articleImage}
+            alt={getArticleImageAlt(article)}
+            fill
+            priority
+            sizes="(max-width: 900px) 100vw, 1100px"
+          />
+        </figure>
 
         <div className="article-body prose">
           {containsAmazonLinks ? (

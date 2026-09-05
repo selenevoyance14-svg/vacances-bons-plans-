@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Article } from "@/lib/articles";
+import { getArticleImage, getArticleImageAlt } from "@/lib/articleImages";
 
 const CATEGORY_LABELS: Record<string, string> = {
   destination: "Destination",
@@ -7,14 +9,6 @@ const CATEGORY_LABELS: Record<string, string> = {
   guide: "Guide pratique",
   comparatif: "Comparatif",
   concours: "Concours",
-};
-
-const CATEGORY_ICONS: Record<string, string> = {
-  destination: "⌖",
-  "bon-plan": "€",
-  guide: "↗",
-  comparatif: "≋",
-  concours: "✦",
 };
 
 function formatDate(date: string) {
@@ -34,13 +28,19 @@ export default function ArticleCard({
   featured?: boolean;
 }) {
   const label = CATEGORY_LABELS[article.category] ?? "Conseil";
-  const icon = CATEGORY_ICONS[article.category] ?? "↗";
+  const image = getArticleImage(article);
 
   return (
     <article className={`travel-card ${featured ? "travel-card-featured" : ""}`}>
       <Link href={`/article/${article.slug}`} className="travel-card-link">
         <div className={`travel-card-visual travel-card-${article.category}`}>
-          <span aria-hidden>{icon}</span>
+          <Image
+            src={image}
+            alt={getArticleImageAlt(article)}
+            fill
+            sizes={featured ? "(max-width: 960px) 100vw, 45vw" : "(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 33vw"}
+          />
+          <span className="travel-card-image-shade" aria-hidden />
           <p>{label}</p>
         </div>
         <div className="travel-card-content">
