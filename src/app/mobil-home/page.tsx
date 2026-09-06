@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { mobilHomeDestinations } from "@/lib/mobilHomeDestinations";
 import { suncampOffersByDepartment, suncampVarOffers } from "@/lib/suncampOffers";
+import { getCityGuidesForDepartment } from "@/lib/cityGuides";
+import MobilHomeDestinationSelector from "@/app/components/MobilHomeDestinationSelector";
 
 export const metadata: Metadata = {
   title: "Location de mobil-home pas cher : destinations et vrais prix",
@@ -12,6 +14,14 @@ export const metadata: Metadata = {
 };
 
 export default function MobilHomePage() {
+  const selectorDestinations = mobilHomeDestinations.map((destination) => ({
+    slug: destination.slug,
+    name: `${destination.departmentNumber} · ${destination.name}`,
+    cities: getCityGuidesForDepartment(destination.slug).map((city) => ({
+      slug: city.slug,
+      name: city.name,
+    })),
+  }));
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -56,6 +66,7 @@ export default function MobilHomePage() {
             <span>Informations datées</span>
             <span>Redirection vers le partenaire</span>
           </div>
+          <MobilHomeDestinationSelector destinations={selectorDestinations} />
         </div>
       </section>
 
