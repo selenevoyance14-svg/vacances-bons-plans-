@@ -74,7 +74,7 @@ export default function MobilHomePage() {
         <div className="site-container">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">10 destinations à comparer</p>
+              <p className="eyebrow">{mobilHomeDestinations.length} départements à comparer</p>
               <h2>De la Méditerranée aux côtes de la Manche.</h2>
             </div>
           </div>
