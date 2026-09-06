@@ -77,7 +77,7 @@ export default function Home() {
             <Link href="/guides" className="button button-primary">
               Découvrir nos guides <span aria-hidden>→</span>
             </Link>
-            <Link href="/destinations" className="button button-ghost">
+            <Link href="/mobil-home" className="button button-ghost">
               Trouver une destination
             </Link>
           </div>
