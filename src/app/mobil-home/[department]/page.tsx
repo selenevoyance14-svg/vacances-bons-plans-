@@ -75,9 +75,20 @@ export default function DepartmentMobilHomePage({ params }: PageProps) {
               <p>{guide.intro}</p>
             </div>
             <aside className="department-summary">
-              <span>Sélection partenaire</span>
-              <strong>{offers.length} campings à comparer</strong>
-              <small>Flux Suncamp vérifié le {lastUpdated}</small>
+              <div className="department-summary-image">
+                <Image
+                  src={offers[0].image}
+                  alt={`Camping avec mobil-home en ${guide.name}`}
+                  fill
+                  priority
+                  sizes="(max-width: 900px) 100vw, 420px"
+                />
+              </div>
+              <div className="department-summary-content">
+                <span>Sélection partenaire</span>
+                <strong>{offers.length} locations à comparer</strong>
+                <small>Photos et offres Suncamp · vérifiées le {lastUpdated}</small>
+              </div>
             </aside>
           </div>
         </div>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { mobilHomeDestinations } from "@/lib/mobilHomeDestinations";
+import { suncampOffersByDepartment, suncampVarOffers } from "@/lib/suncampOffers";
 
 export const metadata: Metadata = {
   title: "Location de mobil-home pas cher : destinations et vrais prix",
@@ -67,22 +69,44 @@ export default function MobilHomePage() {
           </div>
           <div className="destination-grid">
             {mobilHomeDestinations.map((destination) => {
+              const offers = destination.slug === "var"
+                ? suncampVarOffers
+                : (suncampOffersByDepartment[destination.slug] ?? []);
+              const preview = offers[0];
               const content = (
                 <>
-                  <div className="destination-card-topline">
-                    <span>{destination.departmentNumber}</span>
-                    <small>{destination.region}</small>
+                  {preview ? (
+                    <div className="destination-card-image">
+                      <Image
+                        src={preview.image}
+                        alt={`Camping avec mobil-home en ${destination.name}`}
+                        fill
+                        sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                      />
+                      <strong>{offers.length} locations</strong>
+                    </div>
+                  ) : null}
+                  <div className="destination-card-body">
+                    <div className="destination-card-topline">
+                      <span>{destination.departmentNumber}</span>
+                      <small>{destination.region}</small>
+                    </div>
+                    <h3>{destination.name}</h3>
+                    <p>{destination.summary}</p>
+                    <ul>
+                      {destination.highlights.map((highlight) => (
+                        <li key={highlight}>{highlight}</li>
+                      ))}
+                    </ul>
+                    {preview ? (
+                      <small className="destination-card-example">
+                        À découvrir : {preview.name}
+                      </small>
+                    ) : null}
+                    <strong className="destination-card-action">
+                      {destination.available ? "Voir toutes les locations →" : "Guide en préparation"}
+                    </strong>
                   </div>
-                  <h3>{destination.name}</h3>
-                  <p>{destination.summary}</p>
-                  <ul>
-                    {destination.highlights.map((highlight) => (
-                      <li key={highlight}>{highlight}</li>
-                    ))}
-                  </ul>
-                  <strong className="destination-card-action">
-                    {destination.available ? "Découvrir le guide →" : "Guide en préparation"}
-                  </strong>
                 </>
               );
 
