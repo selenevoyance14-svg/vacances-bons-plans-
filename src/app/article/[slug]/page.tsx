@@ -6,6 +6,7 @@ import { getArticles, getArticleBySlug } from "@/lib/articles";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import type { AnchorHTMLAttributes } from "react";
 import { getArticleImage, getArticleImageAlt } from "@/lib/articleImages";
+import { affiliateLinks } from "@/lib/affiliateLinks";
 
 type Props = {
   params: { slug: string };
@@ -165,6 +166,28 @@ export default function ArticlePage({ params }: Props) {
             </aside>
           ) : null}
           <MDXRemote source={article.content} components={{ a: ArticleLink }} />
+          {article.category === "destination" ? (
+            <aside className="destination-partner-box">
+              <p className="eyebrow">Comparer les campings</p>
+              <h2>Voir les disponibilités pour cette destination</h2>
+              <p>
+                Renseignez vos dates et le nombre de voyageurs chez Suncamp pour
+                comparer les hébergements et vérifier le prix total à jour.
+              </p>
+              <a
+                href={affiliateLinks.suncamp.homepage}
+                className="button button-primary"
+                target="_blank"
+                rel="sponsored nofollow noopener noreferrer"
+              >
+                Rechercher sur Suncamp <span aria-hidden>→</span>
+              </a>
+              <small>
+                Lien affilié : une réservation peut nous rapporter une commission,
+                sans coût supplémentaire pour vous.
+              </small>
+            </aside>
+          ) : null}
         </div>
 
         <div className="article-bottom">

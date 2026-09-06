@@ -739,6 +739,39 @@ img {
   line-height: 1.65;
 }
 
+.destination-partner-box {
+  margin-top: 52px;
+  padding: clamp(26px, 5vw, 46px);
+  border-radius: 4px;
+  background: var(--forest);
+  color: white;
+}
+
+.destination-partner-box .eyebrow {
+  margin-bottom: 10px;
+  color: #c9e7dc;
+}
+
+.destination-partner-box h2 {
+  margin: 0 0 14px;
+  color: white;
+  font-size: clamp(27px, 4vw, 38px);
+}
+
+.destination-partner-box > p:not(.eyebrow) {
+  max-width: 680px;
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.destination-partner-box small {
+  display: block;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
 .manifesto {
   padding: 100px 0;
   background: var(--terracotta);

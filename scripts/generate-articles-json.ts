@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { getSeoDestinationArticles } from "../src/lib/seoDestinationGuides";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 const OUTPUT_PATH = path.join(process.cwd(), "public", "articles.json");
@@ -34,6 +35,10 @@ function getAllArticles(): ArticleInfo[] {
       tags: data.tags || [],
     });
   }
+
+  articles.push(
+    ...getSeoDestinationArticles().map(({ content: _content, image: _image, imageAlt: _imageAlt, published: _published, featured: _featured, seoTitle: _seoTitle, seoDescription: _seoDescription, ...article }) => article),
+  );
 
   articles.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()

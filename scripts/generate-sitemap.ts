@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { cityGuides } from "../src/lib/cityGuides";
+import { getSeoDestinationArticles } from "../src/lib/seoDestinationGuides";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 const OUTPUT_PATH = path.join(process.cwd(), "public", "sitemap.xml");
@@ -50,6 +51,15 @@ for (const file of files) {
     <lastmod>${date}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${data.featured ? "0.9" : "0.7"}</priority>
+  </url>`);
+}
+
+for (const article of getSeoDestinationArticles()) {
+  articleEntries.push(`  <url>
+    <loc>${BASE_URL}/article/${article.slug}</loc>
+    <lastmod>${article.date}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>`);
 }
 

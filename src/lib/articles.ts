@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { getSeoDestinationArticles } from "@/lib/seoDestinationGuides";
 
 const contentDir = path.join(process.cwd(), "content");
 
@@ -25,7 +26,7 @@ export function getArticles(): Article[] {
 
   const files = fs.readdirSync(contentDir).filter((f) => f.endsWith(".mdx"));
 
-  const articles = files
+  const fileArticles = files
     .map((file) => {
       const raw = fs.readFileSync(path.join(contentDir, file), "utf-8");
       const { data, content } = matter(raw);
@@ -49,6 +50,8 @@ export function getArticles(): Article[] {
       } as Article;
     })
     .filter(Boolean) as Article[];
+
+  const articles = [...fileArticles, ...getSeoDestinationArticles()] as Article[];
 
   return articles.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
