@@ -1272,6 +1272,7 @@ img {
 }
 
 .partner-offer-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.partner-offer-grid-single { max-width: 760px; grid-template-columns: 1fr; }
 .partner-offer-card { overflow: hidden; border: 1px solid var(--line); background: var(--paper); transition: transform 180ms ease, box-shadow 180ms ease; }
 .partner-offer-card:hover { transform: translateY(-4px); box-shadow: 0 22px 50px rgba(24,50,47,.12); }
 .partner-offer-image { position: relative; min-height: 215px; overflow: hidden; background: var(--sea-light); }
@@ -1280,6 +1281,7 @@ img {
 .partner-offer-image > span { position: absolute; right: 14px; bottom: 14px; padding: 7px 10px; border-radius: 999px; background: rgba(16,40,36,.88); color: white; font-size: 10px; font-weight: 800; }
 .partner-offer-content { padding: 24px; }
 .partner-offer-meta { display: flex; justify-content: space-between; gap: 12px; color: var(--terracotta-dark); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+.partner-offer-meta a { color: var(--terracotta-dark); text-decoration: underline; text-underline-offset: 3px; }
 .partner-offer-meta small { color: #72817f; font-size: 10px; }
 .partner-offer-card h3 { margin: 15px 0 10px; font-family: Georgia,serif; font-size: 26px; font-weight: 400; letter-spacing: -.035em; line-height: 1.12; }
 .partner-offer-card h3 + p { min-height: 70px; margin: 0; color: var(--ink-soft); font-size: 13px; line-height: 1.62; }
@@ -1290,6 +1292,28 @@ img {
 .partner-offer-footer strong { font-size: 12px; }
 .partner-offer-footer small { margin-top: 5px; color: #788682; font-size: 9px; }
 .partner-offer-footer a { color: var(--terracotta-dark); font-size: 11px; font-weight: 800; text-align: right; }
+.city-hero { min-height: 650px; position: relative; display: flex; align-items: end; overflow: hidden; color: white; }
+.city-hero-image, .city-hero-shade { position: absolute; inset: 0; }
+.city-hero-image img { object-fit: cover; }
+.city-hero-shade { background: linear-gradient(90deg, rgba(11,35,31,.9) 0%, rgba(11,35,31,.63) 52%, rgba(11,35,31,.18) 100%); }
+.city-hero-content { position: relative; z-index: 1; padding-bottom: 85px; }
+.city-hero-content h1 { max-width: 900px; margin: 0; font-family: Georgia,serif; font-size: clamp(54px,7vw,92px); font-weight: 400; letter-spacing: -.055em; line-height: 1; }
+.city-hero-content > p:last-child { max-width: 680px; margin: 26px 0 0; color: rgba(255,255,255,.82); font-size: 18px; line-height: 1.7; }
+.city-intro-section { background: var(--paper); }
+.city-intro-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 100px; align-items: start; }
+.city-intro-grid h2 { max-width: 760px; font-family: Georgia,serif; font-size: clamp(38px,4.5vw,62px); font-weight: 400; letter-spacing: -.045em; line-height: 1.08; }
+.city-checklist { padding: 30px; border: 1px solid var(--line); background: var(--cream); }
+.city-checklist h3 { margin: 0 0 20px; font-family: Georgia,serif; font-size: 25px; font-weight: 400; }
+.city-checklist ul { margin: 0; padding: 0; list-style: none; }
+.city-checklist li { padding: 13px 0; border-top: 1px solid var(--line); color: var(--ink-soft); }
+.city-directory-section, .city-related { background: var(--paper); }
+.city-link-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.city-link-grid > a { min-height: 190px; display: flex; flex-direction: column; padding: 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background 180ms ease,color 180ms ease; }
+.city-link-grid > a:hover { background: var(--sea); color: white; }
+.city-link-grid span { color: var(--terracotta-dark); font-size: 10px; font-weight: 800; text-transform: uppercase; }
+.city-link-grid strong { margin-top: auto; font-family: Georgia,serif; font-size: 25px; font-weight: 400; line-height: 1.1; }
+.city-link-grid small { margin-top: 13px; color: var(--ink-soft); }
+.city-link-grid > a:hover span, .city-link-grid > a:hover small { color: rgba(255,255,255,.72); }
 
 .var-guides {
   background: var(--paper);
@@ -1540,6 +1564,8 @@ img {
 
 @media (max-width: 960px) {
   .partner-offer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .city-intro-grid { grid-template-columns: 1fr; gap: 42px; }
+  .city-link-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .about-story-grid, .about-next-grid { grid-template-columns: 1fr; gap: 45px; }
   .about-story aside { position: static; }
   .destination-grid {
@@ -1631,6 +1657,13 @@ img {
 
 @media (max-width: 640px) {
   .partner-offer-grid { grid-template-columns: 1fr; }
+  .city-hero { min-height: 590px; }
+  .city-hero-shade { background: linear-gradient(0deg,rgba(11,35,31,.94) 8%,rgba(11,35,31,.68) 70%,rgba(11,35,31,.25)); }
+  .city-hero-content { padding-bottom: 58px; }
+  .city-hero-content h1 { font-size: 50px; }
+  .city-hero-content > p:last-child { font-size: 16px; }
+  .city-link-grid { grid-template-columns: 1fr; }
+  .city-link-grid > a { min-height: 160px; }
   .partner-offer-card h3 + p { min-height: 0; }
   .about-hero { padding: 70px 0 76px; }
   .about-hero h1 { font-size: 55px; }

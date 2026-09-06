@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { departmentGuides } from "@/lib/departmentGuides";
 import { suncampOffersByDepartment } from "@/lib/suncampOffers";
+import { getCityGuidesForDepartment } from "@/lib/cityGuides";
 
 type PageProps = { params: { department: string } };
 
@@ -26,6 +27,8 @@ export default function DepartmentMobilHomePage({ params }: PageProps) {
   const guide = departmentGuides[params.department];
   const offers = suncampOffersByDepartment[params.department];
   if (!guide || !offers) notFound();
+  const cityPages = getCityGuidesForDepartment(params.department);
+  const cityPageByName = new Map(cityPages.map((city) => [city.name, city]));
 
   const lastUpdated = "5 septembre 2026";
   const jsonLd = {
@@ -119,6 +122,24 @@ export default function DepartmentMobilHomePage({ params }: PageProps) {
         </div>
       </section>
 
+      {cityPages.length > 0 ? (
+        <section className="section city-directory-section">
+          <div className="site-container">
+            <div className="section-heading"><div>
+              <p className="eyebrow">Guides par ville</p>
+              <h2>Où louer votre mobil-home ?</h2>
+            </div></div>
+            <div className="city-link-grid">
+              {cityPages.map((city) => (
+                <Link key={city.slug} href={`/mobil-home/${city.departmentSlug}/${city.slug}`}>
+                  <span>{guide.name}</span><strong>{city.name}</strong><small>Découvrir la ville →</small>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="section offers-preview">
         <div className="site-container">
           <div className="section-heading"><div>
@@ -134,7 +155,9 @@ export default function DepartmentMobilHomePage({ params }: PageProps) {
                 </div>
                 <div className="partner-offer-content">
                   <div className="partner-offer-meta">
-                    <span>{offer.city}</span>
+                    {cityPageByName.has(offer.city) ? (
+                      <Link href={`/mobil-home/${guide.slug}/${cityPageByName.get(offer.city)!.slug}`}>{offer.city}</Link>
+                    ) : <span>{offer.city}</span>}
                     {offer.rating ? <small>Note {offer.rating}/10</small> : <small>{guide.name}</small>}
                   </div>
                   <h3>{offer.name}</h3>

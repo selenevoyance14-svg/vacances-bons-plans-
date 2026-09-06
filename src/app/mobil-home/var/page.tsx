@@ -4,6 +4,7 @@ import Link from "next/link";
 import ArticleCard from "@/app/components/ArticleCard";
 import { getArticles } from "@/lib/articles";
 import { suncampVarOffers } from "@/lib/suncampOffers";
+import { getCityGuidesForDepartment } from "@/lib/cityGuides";
 
 export const metadata: Metadata = {
   title: "Location mobil-home dans le Var : secteurs, prix et bons plans 2026",
@@ -50,6 +51,8 @@ export default function VarMobilHomePage() {
     .filter((article) => article.tags.some((tag) => ["var", "frejus"].includes(tag.toLowerCase())))
     .slice(0, 3);
   const lastUpdated = "2 septembre 2026";
+  const cityPages = getCityGuidesForDepartment("var");
+  const cityPageByName = new Map(cityPages.map((city) => [city.name, city]));
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -148,6 +151,22 @@ export default function VarMobilHomePage() {
         </div>
       </section>
 
+      <section className="section city-directory-section">
+        <div className="site-container">
+          <div className="section-heading"><div>
+            <p className="eyebrow">Guides par ville</p>
+            <h2>Autour de Fréjus et de l’Estérel</h2>
+          </div></div>
+          <div className="city-link-grid">
+            {cityPages.map((city) => (
+              <Link key={city.slug} href={`/mobil-home/var/${city.slug}`}>
+                <span>Var</span><strong>{city.name}</strong><small>Découvrir la ville →</small>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section offers-preview">
         <div className="site-container">
           <div className="section-heading">
@@ -170,7 +189,9 @@ export default function VarMobilHomePage() {
                 </div>
                 <div className="partner-offer-content">
                   <div className="partner-offer-meta">
-                    <span>{offer.city}</span>
+                    {cityPageByName.has(offer.city) ? (
+                      <Link href={`/mobil-home/var/${cityPageByName.get(offer.city)!.slug}`}>{offer.city}</Link>
+                    ) : <span>{offer.city}</span>}
                     {offer.rating ? <small>Note {offer.rating}/10</small> : <small>Var</small>}
                   </div>
                   <h3>{offer.name}</h3>
