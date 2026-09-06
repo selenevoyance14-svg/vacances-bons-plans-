@@ -58,8 +58,8 @@ export default function Home() {
       <section className="home-hero">
         <div className="home-hero-media">
           <Image
-            src="/images/editorial/mobil-home-mediterranee.webp"
-            alt="Mobil-home avec terrasse face à la Méditerranée"
+            src="/images/hero-vacances-famille-mobil-home.webp"
+            alt="Vacances en famille dans un mobil-home au bord de la Méditerranée"
             fill
             priority
             sizes="100vw"
