@@ -1,3 +1,5 @@
+import { expandedCityGuides } from "@/lib/expandedCampingData";
+
 export type CityGuide = {
   slug: string;
   name: string;
@@ -62,10 +64,12 @@ const guides: CityGuide[] = [
   { slug: "soustons", name: "Soustons", departmentSlug: "landes", departmentName: "Landes", intro: "Soustons permet d’alterner lacs, forêt et océan dans un secteur parcouru de nombreuses pistes cyclables.", idealFor: "Les vacanciers qui recherchent un compromis entre baignade calme, plage océanique et activités nature.", nearby: ["Lac de Soustons", "Soustons-Plage", "Vieux-Boucau"], practical: ["Repérer quel lac est le plus proche", "Voiture utile selon le camping", "Vérifier les itinéraires cyclables"] },
 ];
 
+const allGuides = [...guides, ...expandedCityGuides];
+
 export const cityGuides = Object.fromEntries(
-  guides.map((guide) => [`${guide.departmentSlug}/${guide.slug}`, guide]),
+  allGuides.map((guide) => [`${guide.departmentSlug}/${guide.slug}`, guide]),
 ) as Record<string, CityGuide>;
 
 export function getCityGuidesForDepartment(departmentSlug: string) {
-  return guides.filter((guide) => guide.departmentSlug === departmentSlug);
+  return allGuides.filter((guide) => guide.departmentSlug === departmentSlug);
 }

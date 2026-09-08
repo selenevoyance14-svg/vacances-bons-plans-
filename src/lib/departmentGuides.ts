@@ -1,3 +1,5 @@
+import { expandedDepartmentGuides } from "@/lib/expandedCampingData";
+
 export type DepartmentGuide = {
   slug: string;
   name: string;
@@ -10,7 +12,7 @@ export type DepartmentGuide = {
   faqs: { question: string; answer: string }[];
 };
 
-export const departmentGuides: Record<string, DepartmentGuide> = {
+const baseDepartmentGuides: Record<string, DepartmentGuide> = {
   finistere: {
     slug: "finistere", name: "Finistère", number: "29", region: "Bretagne",
     intro: "Du Pays Bigouden à Bénodet et Névez, comparez la distance à la plage, l’abri du vent et les excursions possibles.",
@@ -261,4 +263,9 @@ export const departmentGuides: Record<string, DepartmentGuide> = {
       { question: "Combien de jours prévoir ?", answer: "Quatre à sept jours permettent d’alterner les sorties importantes et les journées de repos au camping." },
     ],
   },
+};
+
+export const departmentGuides: Record<string, DepartmentGuide> = {
+  ...baseDepartmentGuides,
+  ...expandedDepartmentGuides,
 };

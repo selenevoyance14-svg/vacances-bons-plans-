@@ -185,7 +185,7 @@ export default function VarMobilHomePage() {
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 33vw"
                   />
-                  <span>{offer.stars} étoiles</span>
+                  {offer.stars ? <span>{offer.stars} étoiles</span> : null}
                 </div>
                 <div className="partner-offer-content">
                   <div className="partner-offer-meta">

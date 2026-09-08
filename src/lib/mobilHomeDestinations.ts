@@ -1,3 +1,5 @@
+import { expandedMobilHomeDestinations } from "@/lib/expandedCampingData";
+
 export type MobilHomeDestination = {
   slug: string;
   name: string;
@@ -149,4 +151,5 @@ export const mobilHomeDestinations: MobilHomeDestination[] = [
     highlights: ["Familles", "Campagne", "Excursions"],
     available: true,
   },
+  ...expandedMobilHomeDestinations,
 ];

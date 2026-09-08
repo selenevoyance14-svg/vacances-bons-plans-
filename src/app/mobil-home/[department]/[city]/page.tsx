@@ -110,7 +110,7 @@ export default function CityMobilHomePage({ params }: PageProps) {
               <article key={offer.id} className="partner-offer-card">
                 <div className="partner-offer-image">
                   <Image src={offer.image} alt={`${offer.name} à ${guide.name}`} fill sizes="(max-width: 800px) 100vw, 50vw" />
-                  <span>{offer.stars} étoiles</span>
+                  {offer.stars ? <span>{offer.stars} étoiles</span> : null}
                 </div>
                 <div className="partner-offer-content">
                   <div className="partner-offer-meta"><span>{offer.city}</span>{offer.rating ? <small>Note {offer.rating}/10</small> : <small>{guide.departmentName}</small>}</div>

@@ -1,10 +1,11 @@
 import { moreSuncampOffers } from "@/lib/moreSuncampOffers";
+import { expandedSuncampOffers } from "@/lib/expandedCampingData";
 
 export type SuncampOffer = {
   id: string;
   name: string;
   city: string;
-  stars: number;
+  stars?: number;
   rating?: number;
   image: string;
   href: string;
@@ -16,6 +17,7 @@ export type SuncampOffer = {
 // Sélection éditoriale issue du flux produit Suncamp #1529348,
 // mis à jour quotidiennement par TradeTracker. Contrôle : 3 septembre 2026.
 export const suncampVarOffers: SuncampOffer[] = [
+  ...(expandedSuncampOffers.var ?? []),
   {
     id: "104404",
     name: "Camping Yelloh! Village Holiday Green",
@@ -86,7 +88,7 @@ export const suncampVarOffers: SuncampOffer[] = [
   },
 ];
 
-export const suncampOffersByDepartment: Record<string, SuncampOffer[]> = {
+const baseSuncampOffersByDepartment: Record<string, SuncampOffer[]> = {
   ...moreSuncampOffers,
   vendee: [
     {
@@ -284,3 +286,11 @@ export const suncampOffersByDepartment: Record<string, SuncampOffer[]> = {
     },
   ],
 };
+
+export const suncampOffersByDepartment: Record<string, SuncampOffer[]> = Object.fromEntries(
+  Array.from(new Set([...Object.keys(baseSuncampOffersByDepartment), ...Object.keys(expandedSuncampOffers)]))
+    .map((department) => [
+      department,
+      [...(baseSuncampOffersByDepartment[department] ?? []), ...(expandedSuncampOffers[department] ?? [])],
+    ]),
+);

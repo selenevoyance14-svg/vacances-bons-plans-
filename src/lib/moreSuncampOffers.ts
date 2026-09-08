@@ -1,7 +1,7 @@
 import type { SuncampOffer } from "@/lib/suncampOffers";
 
 const offer = (
-  id: string, name: string, city: string, stars: number, rating: number | undefined,
+  id: string, name: string, city: string, stars: number | undefined, rating: number | undefined,
   image: string, href: string, summary: string, highlights: string[], distanceToSeaKm?: number,
 ): SuncampOffer => ({ id, name, city, stars, rating, image, href, summary, highlights, distanceToSeaKm });
 
