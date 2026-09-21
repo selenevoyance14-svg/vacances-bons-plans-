@@ -32,9 +32,11 @@ export default function CityMobilHomePage({ params }: PageProps) {
   const departmentOffers = guide.departmentSlug === "var"
     ? suncampVarOffers
     : (suncampOffersByDepartment[guide.departmentSlug] ?? []);
-  const offers = departmentOffers.filter(
+  const cityOffers = departmentOffers.filter(
     (offer) => offer.city === guide.name,
   );
+  const hasLocalOffers = cityOffers.length > 0;
+  const offers = hasLocalOffers ? cityOffers : departmentOffers;
   if (offers.length === 0) notFound();
 
   const relatedCities = getCityGuidesForDepartment(guide.departmentSlug)
@@ -46,7 +48,7 @@ export default function CityMobilHomePage({ params }: PageProps) {
     name: `Location de mobil-home à ${guide.name}`,
     description: guide.intro,
     url: `https://vacances-bons-plans.fr/mobil-home/${guide.departmentSlug}/${guide.slug}`,
-    dateModified: "2026-09-06",
+    dateModified: "2026-09-21",
     breadcrumb: {
       "@type": "BreadcrumbList",
       itemListElement: [
@@ -70,7 +72,7 @@ export default function CityMobilHomePage({ params }: PageProps) {
 
       <section className="city-hero">
         <div className="city-hero-image">
-          <Image src={offers[0].image} alt={`Camping et mobil-home à ${guide.name}`} fill priority sizes="100vw" />
+          <Image src={offers[0].image} alt={`Camping pour un séjour près de ${guide.name}`} fill priority sizes="100vw" />
         </div>
         <div className="city-hero-shade" />
         <div className="site-container city-hero-content">
@@ -102,14 +104,20 @@ export default function CityMobilHomePage({ params }: PageProps) {
       <section className="section offers-preview">
         <div className="site-container">
           <div className="section-heading"><div>
-            <p className="eyebrow">Disponible chez notre partenaire</p>
-            <h2>{offers.length > 1 ? `${offers.length} campings à comparer` : "Le camping à découvrir"}</h2>
+            <p className="eyebrow">{hasLocalOffers ? "Disponible dans la commune" : `Sélection disponible en ${guide.departmentName}`}</p>
+            <h2>{hasLocalOffers
+              ? (offers.length > 1 ? `${offers.length} campings à comparer à ${guide.name}` : `Un camping à découvrir à ${guide.name}`)
+              : `${offers.length} ${offers.length > 1 ? "campings" : "camping"} à comparer autour de ${guide.name}`}
+            </h2>
+            {!hasLocalOffers ? (
+              <p>Nous n’avons pas encore d’offre partenaire située exactement à {guide.name}. Voici les locations actuellement référencées dans le département, avec leur commune réelle.</p>
+            ) : null}
           </div></div>
           <div className={`partner-offer-grid ${offers.length === 1 ? "partner-offer-grid-single" : ""}`}>
             {offers.map((offer) => (
               <article key={offer.id} className="partner-offer-card">
                 <div className="partner-offer-image">
-                  <Image src={offer.image} alt={`${offer.name} à ${guide.name}`} fill sizes="(max-width: 800px) 100vw, 50vw" />
+                  <Image src={offer.image} alt={`${offer.name} à ${offer.city}, près de ${guide.name}`} fill sizes="(max-width: 800px) 100vw, 50vw" />
                   {offer.stars ? <span>{offer.stars} étoiles</span> : null}
                 </div>
                 <div className="partner-offer-content">
