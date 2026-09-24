@@ -1,5 +1,6 @@
 import { moreSuncampOffers } from "@/lib/moreSuncampOffers";
 import { expandedSuncampOffers } from "@/lib/expandedCampingData";
+import { currentFeedOffers } from "@/lib/currentFeedExpansion";
 
 export type SuncampOffer = {
   id: string;
@@ -288,9 +289,9 @@ const baseSuncampOffersByDepartment: Record<string, SuncampOffer[]> = {
 };
 
 export const suncampOffersByDepartment: Record<string, SuncampOffer[]> = Object.fromEntries(
-  Array.from(new Set([...Object.keys(baseSuncampOffersByDepartment), ...Object.keys(expandedSuncampOffers)]))
+  Array.from(new Set([...Object.keys(baseSuncampOffersByDepartment), ...Object.keys(expandedSuncampOffers), ...Object.keys(currentFeedOffers)]))
     .map((department) => [
       department,
-      [...(baseSuncampOffersByDepartment[department] ?? []), ...(expandedSuncampOffers[department] ?? [])],
+      [...(baseSuncampOffersByDepartment[department] ?? []), ...(expandedSuncampOffers[department] ?? []), ...(currentFeedOffers[department] ?? [])],
     ]),
 );

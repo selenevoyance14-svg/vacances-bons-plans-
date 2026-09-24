@@ -1,4 +1,5 @@
 import { expandedMobilHomeDestinations } from "@/lib/expandedCampingData";
+import { currentFeedDestinations } from "@/lib/currentFeedExpansion";
 
 export type MobilHomeDestination = {
   slug: string;
@@ -152,4 +153,5 @@ export const mobilHomeDestinations: MobilHomeDestination[] = [
     available: true,
   },
   ...expandedMobilHomeDestinations,
+  ...currentFeedDestinations,
 ];

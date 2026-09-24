@@ -1,4 +1,5 @@
 import { expandedDepartmentGuides } from "@/lib/expandedCampingData";
+import { currentFeedDepartmentGuides } from "@/lib/currentFeedExpansion";
 
 export type DepartmentGuide = {
   slug: string;
@@ -268,4 +269,5 @@ const baseDepartmentGuides: Record<string, DepartmentGuide> = {
 export const departmentGuides: Record<string, DepartmentGuide> = {
   ...baseDepartmentGuides,
   ...expandedDepartmentGuides,
+  ...currentFeedDepartmentGuides,
 };
