@@ -2049,6 +2049,87 @@ img {
   }
 }
 
+.europe-hero {
+  background: #173f3a;
+  color: white;
+}
+
+.europe-hero > div > p:last-child {
+  max-width: 720px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.europe-country-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.europe-country-card {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  border-radius: 22px;
+  color: white;
+  isolation: isolate;
+}
+
+.europe-country-card img,
+.europe-country-placeholder {
+  object-fit: cover;
+  z-index: -2;
+  transition: transform 0.35s ease;
+}
+
+.europe-country-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #315e55, #183b37);
+}
+
+.europe-country-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, rgba(11, 32, 29, 0.92), rgba(11, 32, 29, 0.08) 75%);
+}
+
+.europe-country-copy {
+  position: absolute;
+  inset: auto 30px 28px;
+  display: grid;
+  gap: 7px;
+}
+
+.europe-country-copy small {
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f2b39c;
+}
+
+.europe-country-copy strong {
+  font-family: Georgia, serif;
+  font-size: 42px;
+}
+
+.europe-country-copy em {
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.europe-country-card:hover img {
+  transform: scale(1.035);
+}
+
+@media (max-width: 760px) {
+  .europe-country-grid { grid-template-columns: 1fr; }
+  .europe-country-card { min-height: 310px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

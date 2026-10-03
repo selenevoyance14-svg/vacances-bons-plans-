@@ -28,6 +28,12 @@ const UNIVERSES = [
     title: "Préparer sans stress",
     description: "Budget, réservation, bagages et conseils utiles avant le départ.",
   },
+  {
+    href: "/campings-europe",
+    number: "05",
+    title: "Campings en Europe",
+    description: "Italie, Espagne et Hongrie : des offres réelles à comparer chez Suncamp.",
+  },
 ];
 
 export default function Home() {

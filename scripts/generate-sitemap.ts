@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { cityGuides } from "../src/lib/cityGuides";
 import { getSeoDestinationArticles } from "../src/lib/seoDestinationGuides";
 import { mobilHomeDestinations } from "../src/lib/mobilHomeDestinations";
+import { europeCountryGuides, europeOffers, type EuropeCountrySlug } from "../src/lib/europeCampingData";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 const OUTPUT_PATH = path.join(process.cwd(), "public", "sitemap.xml");
@@ -15,6 +16,10 @@ const staticPages = [
   { url: "", priority: "1.0", changefreq: "daily" },
   { url: "/destinations", priority: "0.8", changefreq: "weekly" },
   { url: "/mobil-home", priority: "0.9", changefreq: "weekly" },
+  { url: "/campings-europe", priority: "0.9", changefreq: "weekly" },
+  ...(Object.keys(europeCountryGuides) as EuropeCountrySlug[])
+    .filter((country) => (europeOffers[country] ?? []).length > 0)
+    .map((country) => ({ url: `/campings-europe/${country}`, priority: "0.8", changefreq: "weekly" })),
   ...mobilHomeDestinations.map((destination) => ({
     url: `/mobil-home/${destination.slug}`,
     priority: "0.9",
