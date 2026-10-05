@@ -31,6 +31,7 @@ const staticPages = [
     changefreq: "weekly",
   })),
   { url: "/bons-plans", priority: "0.8", changefreq: "weekly" },
+  { url: "/concours", priority: "0.8", changefreq: "weekly" },
   { url: "/guides", priority: "0.8", changefreq: "weekly" },
   { url: "/comparatifs", priority: "0.8", changefreq: "weekly" },
   { url: "/mentions-legales", priority: "0.3", changefreq: "monthly" },
