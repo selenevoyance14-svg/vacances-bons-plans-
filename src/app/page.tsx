@@ -34,12 +34,6 @@ const UNIVERSES = [
     title: "Campings en Europe",
     description: "Italie, Espagne et Hongrie : des offres réelles à comparer chez Suncamp.",
   },
-  {
-    href: "/concours",
-    number: "06",
-    title: "Jeux concours",
-    description: "Séjours, voyages et cadeaux à gagner avec les dates et règlements vérifiés.",
-  },
 ];
 
 export default function Home() {

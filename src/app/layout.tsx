@@ -37,7 +37,6 @@ export const metadata: Metadata = {
 const NAVIGATION = [
   { href: "/mobil-home", label: "Mobil-homes" },
   { href: "/campings-europe", label: "Europe" },
-  { href: "/concours", label: "Jeux concours" },
   { href: "/destinations", label: "Destinations" },
   { href: "/bons-plans", label: "Comparer un séjour" },
   { href: "/comparatifs", label: "Essentiels voyage" },
@@ -111,7 +110,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <ul>
                 <li><Link href="/a-propos">À propos</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
-                <li><Link href="/concours">Jeux concours</Link></li>
                 <li><Link href="/mentions-legales">Mentions légales</Link></li>
                 <li><Link href="/affiliation-amazon">Affiliation Amazon</Link></li>
                 <li><Link href="/confidentialite">Confidentialité</Link></li>
