@@ -133,6 +133,26 @@ img {
   display: none;
 }
 
+.language-nav { display: flex; align-items: center; gap: 3px; padding: 4px; border: 1px solid var(--line); border-radius: 999px; }
+.language-nav a { padding: 6px 7px; border-radius: 999px; color: var(--ink-soft); font-size: 9px; font-weight: 850; letter-spacing: .06em; }
+.language-nav a:hover { background: var(--sea-light); color: var(--sea); }
+
+.international-hero { padding: 105px 0 95px; color: white; background: linear-gradient(90deg,rgba(10,39,35,.96),rgba(10,39,35,.72)),url('/images/hero-vacances-famille-mobil-home.webp') center/cover; }
+.international-hero h1 { max-width: 1000px; margin: 15px 0 24px; font-family: Georgia,serif; font-size: clamp(50px,7vw,88px); font-weight: 400; letter-spacing: -.055em; line-height: 1; }
+.international-hero > div > p:not(.eyebrow) { max-width: 760px; margin: 0; color: rgba(255,255,255,.82); font-size: 19px; line-height: 1.7; }
+.international-pills { margin-top: 34px; }
+.international-themes .section-heading p:last-child,.international-offers .section-heading p:last-child { max-width: 720px; color: var(--ink-soft); line-height: 1.7; }
+.international-theme-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.international-theme-card { position: relative; min-height: 290px; padding: 32px; border: 1px solid var(--line); background: var(--paper); transition: transform 180ms ease,box-shadow 180ms ease; }
+.international-theme-card:hover,.international-theme-card.is-active { transform: translateY(-4px); box-shadow: 0 22px 50px rgba(24,50,47,.12); }
+.international-theme-card.is-active { border-color: var(--terracotta); }
+.international-theme-card small { color: var(--terracotta-dark); font-size: 10px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.international-theme-card h3 { margin: 18px 0 14px; font-family: Georgia,serif; font-size: 29px; font-weight: 400; line-height: 1.08; }
+.international-theme-card p { margin: 0; color: var(--ink-soft); font-size: 13px; line-height: 1.65; }
+.international-theme-card > strong { position: absolute; right: 28px; bottom: 25px; color: var(--terracotta); font-size: 24px; }
+.international-offers { background: var(--cream); }
+.international-disclosure { max-width: 780px; margin: 30px auto 0; color: var(--ink-soft); font-size: 12px; text-align: center; }
+
 .home-hero {
   min-height: 720px;
   position: relative;
@@ -1730,6 +1750,8 @@ img {
 }
 
 @media (max-width: 960px) {
+  .language-nav { margin-left: auto; }
+  .international-theme-grid { grid-template-columns: 1fr; }
   .destination-selector { grid-template-columns: 1fr 1fr; }
   .destination-selector-heading { grid-column: 1 / -1; }
   .destination-selector button { grid-column: 1 / -1; }
@@ -1826,6 +1848,11 @@ img {
 }
 
 @media (max-width: 640px) {
+  .language-nav { gap: 1px; }
+  .language-nav a { padding: 5px 6px; }
+  .international-hero { padding: 72px 0 68px; }
+  .international-hero h1 { font-size: 48px; }
+  .international-hero > div > p:not(.eyebrow) { font-size: 16px; }
   .destination-selector { grid-template-columns: 1fr; padding: 17px; }
   .destination-selector-heading,
   .destination-selector button { grid-column: auto; }

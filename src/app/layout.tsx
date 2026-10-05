@@ -68,6 +68,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <Link key={item.href} href={item.href}>{item.label}</Link>
               ))}
             </nav>
+            <nav className="language-nav" aria-label="Choisir la langue">
+              <Link href="/" hrefLang="fr">FR</Link>
+              <Link href="/en" hrefLang="en">EN</Link>
+              <Link href="/de" hrefLang="de">DE</Link>
+              <Link href="/nl" hrefLang="nl">NL</Link>
+            </nav>
             <Link href="/recherche" className="search-link" aria-label="Rechercher sur le site">
               <span>Rechercher</span>
               <svg viewBox="0 0 24 24" aria-hidden>
