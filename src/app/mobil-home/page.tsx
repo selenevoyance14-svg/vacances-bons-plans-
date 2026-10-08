@@ -139,6 +139,21 @@ export default function MobilHomePage() {
         </div>
       </section>
 
+      <section className="section">
+        <div className="site-container">
+          <div className="section-heading">
+            <div><p className="eyebrow">Sélections thématiques</p><h2>Choisir un camping selon vos vraies priorités.</h2></div>
+            <Link className="text-link" href="/campings-france">Toutes les sélections →</Link>
+          </div>
+          <div className="city-link-grid">
+            <Link href="/campings-france/bord-de-mer"><span>Plage</span><strong>Bord de mer</strong><small>Comparer →</small></Link>
+            <Link href="/campings-france/parc-aquatique"><span>Famille</span><strong>Parc aquatique</strong><small>Comparer →</small></Link>
+            <Link href="/campings-france/lac-riviere"><span>Nature</span><strong>Lac et rivière</strong><small>Comparer →</small></Link>
+            <Link href="/campings-france/montagne"><span>Grand air</span><strong>Montagne en été</strong><small>Comparer →</small></Link>
+          </div>
+        </div>
+      </section>
+
       <section className="editorial-promise">
         <div className="site-container editorial-promise-grid">
           <div>

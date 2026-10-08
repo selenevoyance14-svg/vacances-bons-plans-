@@ -166,6 +166,14 @@ export default function ArticlePage({ params }: Props) {
             </aside>
           ) : null}
           <MDXRemote source={article.content} components={{ a: ArticleLink }} />
+          {article.category !== "destination" && article.tags.some((tag) => /mobil-home|camping|bord de mer|montagne|lac/i.test(tag)) ? (
+            <aside className="destination-partner-box">
+              <p className="eyebrow">Explorer les campings</p>
+              <h2>Passer du conseil à une sélection concrète</h2>
+              <p>Comparez les campings français selon votre priorité : plage, parc aquatique, lac, montagne ou région.</p>
+              <p><Link href="/campings-france/bord-de-mer">Campings en bord de mer</Link> · <Link href="/campings-france/parc-aquatique">Campings avec parc aquatique</Link> · <Link href="/campings-france/montagne">Campings à la montagne</Link></p>
+            </aside>
+          ) : null}
           {article.category === "destination" ? (
             <aside className="destination-partner-box">
               <p className="eyebrow">Comparer les campings</p>
