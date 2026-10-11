@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { departmentGuides } from "@/lib/departmentGuides";
 import { suncampOffersByDepartment } from "@/lib/suncampOffers";
 import { getCityGuidesForDepartment } from "@/lib/cityGuides";
+import { featuredCampingsById } from "@/lib/featuredCampings";
 
 type PageProps = { params: { department: string } };
 
@@ -174,6 +175,7 @@ export default function DepartmentMobilHomePage({ params }: PageProps) {
                   <h3>{offer.name}</h3>
                   <p>{offer.summary}</p>
                   <ul>{offer.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
+                  {featuredCampingsById[offer.id] ? <p><Link className="text-link" href={`/campings-france/camping/${featuredCampingsById[offer.id].slug}`}>Lire la fiche complète du camping →</Link></p> : null}
                   <div className="partner-offer-footer">
                     <div>
                       <strong>Tarif sur Suncamp</strong>
