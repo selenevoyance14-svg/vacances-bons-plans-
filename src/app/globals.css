@@ -998,6 +998,40 @@ img {
   opacity: 0.48;
 }
 
+.home-rental-search {
+  padding: 72px 0;
+  background: var(--sea-light);
+}
+
+.home-rental-search-copy {
+  display: grid;
+  grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+  gap: 70px;
+  align-items: end;
+}
+
+.home-rental-search-copy h2 {
+  margin: 10px 0 0;
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 400;
+  letter-spacing: -.045em;
+  line-height: 1.05;
+}
+
+.home-rental-search-copy > p:last-child {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.home-rental-finder {
+  margin-top: 30px;
+  background: var(--paper);
+  box-shadow: 0 20px 60px rgba(24, 50, 47, .12);
+}
+
 .destination-directory {
   background: var(--paper);
 }
@@ -1755,6 +1789,7 @@ img {
   .destination-selector { grid-template-columns: 1fr 1fr; }
   .destination-selector-heading { grid-column: 1 / -1; }
   .destination-selector button { grid-column: 1 / -1; }
+  .home-rental-search-copy { grid-template-columns: 1fr; gap: 18px; }
   .partner-offer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .city-intro-grid { grid-template-columns: 1fr; gap: 42px; }
   .city-link-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }

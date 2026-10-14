@@ -5,6 +5,7 @@ import { getArticles } from "@/lib/articles";
 import { featuredCampings } from "@/lib/featuredCampings";
 import { suncampOffersByDepartment, suncampVarOffers } from "@/lib/suncampOffers";
 import { bungalowThemes } from "@/lib/bungalowThemes";
+import HolidayRentalFinder from "@/app/components/HolidayRentalFinder";
 
 const UNIVERSES = [
   {
@@ -126,6 +127,18 @@ export default function Home() {
           <span>Conseils indépendants</span>
           <span>Budgets expliqués</span>
           <span>Informations datées</span>
+        </div>
+      </section>
+
+      <section className="home-rental-search" aria-labelledby="home-rental-search-title">
+        <div className="site-container">
+          <div className="home-rental-search-copy">
+            <p className="eyebrow">Maisons, chalets et villas</p>
+            <h2 id="home-rental-search-title">Et si votre prochaine location était déjà ici ?</h2>
+            <p>Indiquez le type de logement et ce qui compte le plus pour votre séjour. Nous vous conduisons vers la sélection adaptée avant la recherche des disponibilités chez Bungalow.net.</p>
+          </div>
+          <HolidayRentalFinder />
+          <p className="partner-disclosure">Recherche éditoriale puis redirection vers notre partenaire affilié Bungalow.net. Les prix et disponibilités sont vérifiés chez le partenaire.</p>
         </div>
       </section>
 
