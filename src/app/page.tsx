@@ -4,6 +4,7 @@ import ArticleCard from "@/app/components/ArticleCard";
 import { getArticles } from "@/lib/articles";
 import { featuredCampings } from "@/lib/featuredCampings";
 import { suncampOffersByDepartment, suncampVarOffers } from "@/lib/suncampOffers";
+import { bungalowThemes } from "@/lib/bungalowThemes";
 
 const UNIVERSES = [
   {
@@ -41,6 +42,12 @@ const UNIVERSES = [
     number: "06",
     title: "Campings en France",
     description: "Mer, montagne, lac ou parc aquatique : comparez selon vos priorités.",
+  },
+  {
+    href: "/locations-vacances",
+    number: "07",
+    title: "Maisons, chalets & villas",
+    description: "Plus d’espace et d’intimité pour les familles, groupes et séjours hors saison.",
   },
 ];
 
@@ -158,6 +165,14 @@ export default function Home() {
             <div className="partner-offer-content"><div className="partner-offer-meta"><Link href={`/mobil-home/${camping.departmentSlug}`}>{camping.departmentName}</Link><small>{camping.city}</small></div><h3>{camping.name}</h3><p>{camping.editorialAngle}</p><div className="partner-offer-footer"><div><strong>{camping.region}</strong><small>Conseils et réservation</small></div><Link href={`/campings-france/camping/${camping.slug}`}>Voir la fiche →</Link></div></div>
           </article>)}</div>
           <p className="partner-disclosure">Sélection issue du flux Suncamp. Les disponibilités et le prix total dépendent de vos dates.</p>
+        </div>
+      </section>
+
+      <section className="section city-related">
+        <div className="site-container">
+          <div className="section-heading"><div><p className="eyebrow">Nouveau partenaire · Bungalow.net</p><h2>Une maison, un chalet ou une villa plutôt qu’un camping ?</h2></div><Link href="/locations-vacances" className="text-link">Toutes les locations →</Link></div>
+          <div className="city-link-grid">{(["bord-de-mer", "montagne", "grande-famille"] as const).map((slug) => <Link href={`/locations-vacances/${slug}`} key={slug}><span>Maison de vacances</span><strong>{bungalowThemes[slug].name}</strong><small>{bungalowThemes[slug].idealFor} →</small></Link>)}</div>
+          <p className="partner-disclosure">Bungalow.net est un partenaire affilié spécialisé dans les maisons et parcs de vacances en France et en Europe.</p>
         </div>
       </section>
 

@@ -15,7 +15,8 @@ type Props = {
 function ArticleLink({ href = "", rel, ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) {
   const isAmazon = href.includes("amazon.fr") || href.includes("amzn.to");
   const isSuncamp = href.includes("suncamp.fr");
-  const isAffiliate = isAmazon || isSuncamp;
+  const isTradeTracker = href.includes("tc.tradetracker.net");
+  const isAffiliate = isAmazon || isSuncamp || isTradeTracker;
 
   return (
     <a
