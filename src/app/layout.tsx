@@ -36,9 +36,10 @@ export const metadata: Metadata = {
 
 const NAVIGATION = [
   { href: "/mobil-home", label: "Mobil-homes" },
+  { href: "/campings-france", label: "Campings France" },
   { href: "/campings-europe", label: "Europe" },
   { href: "/destinations", label: "Destinations" },
-  { href: "/bons-plans", label: "Comparer un séjour" },
+  { href: "/bons-plans", label: "Bons plans" },
   { href: "/comparatifs", label: "Essentiels voyage" },
 ];
 

@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import ArticleCard from "@/app/components/ArticleCard";
 import { getArticles } from "@/lib/articles";
+import { featuredCampings } from "@/lib/featuredCampings";
+import { suncampOffersByDepartment, suncampVarOffers } from "@/lib/suncampOffers";
 
 const UNIVERSES = [
   {
@@ -34,6 +36,12 @@ const UNIVERSES = [
     title: "Campings en Europe",
     description: "Italie, Espagne et Hongrie : des offres réelles à comparer chez Suncamp.",
   },
+  {
+    href: "/campings-france",
+    number: "06",
+    title: "Campings en France",
+    description: "Mer, montagne, lac ou parc aquatique : comparez selon vos priorités.",
+  },
 ];
 
 export default function Home() {
@@ -64,9 +72,22 @@ export default function Home() {
   const destinationCount = articles.filter(
     (article) => article.category === "destination",
   ).length;
+  const campingCount = new Set([
+    ...Object.values(suncampOffersByDepartment).flat().map((offer) => offer.id),
+    ...suncampVarOffers.map((offer) => offer.id),
+  ]).size;
+  const homepageCampings = featuredCampings.slice(0, 3);
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Vacances Bons Plans",
+    url: "https://vacances-bons-plans.fr",
+    description: "Guides et sélections de campings et mobil-homes pour comparer le prix total avant de réserver.",
+  };
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
       <section className="home-hero">
         <div className="home-hero-media">
           <Image
@@ -104,28 +125,39 @@ export default function Home() {
       <section className="compare-strip" id="comparer">
         <div className="site-container compare-strip-grid">
           <div className="compare-copy">
-            <p className="eyebrow">Bientôt sur Vacances Bons Plans</p>
+            <p className="eyebrow">{campingCount} campings français référencés</p>
             <h2>Comparez le séjour complet, pas seulement le prix d&apos;appel.</h2>
             <p>
-              Nous préparons un moteur pour comparer campings, mobil-homes et
-              séjours familiaux. Prix total, dates, nombre de voyageurs et options :
-              les éléments utiles seront réunis avant de vous rediriger vers le partenaire.
+              Explorez les campings par ville, département ou type de séjour. Vérifiez
+              ensuite le prix total, les dates et les options disponibles chez le partenaire
+              avant de réserver.
             </p>
-            <Link href="/mobil-home" className="button button-primary">
-              Comparer les destinations <span aria-hidden>→</span>
+            <Link href="/campings-france/camping" className="button button-primary">
+              Voir les campings sélectionnés <span aria-hidden>→</span>
             </Link>
           </div>
-          <div className="compare-options" aria-label="Types de vacances bientôt comparables">
-            <Link href="/mobil-home">
-              <span>01</span><strong>Camping & mobil-home</strong><small>Emplacement, location et frais annexes</small>
+          <div className="compare-options" aria-label="Façons de choisir un camping">
+            <Link href="/campings-france/bord-de-mer">
+              <span>01</span><strong>Au bord de la mer</strong><small>Méditerranée, Atlantique et Bretagne</small>
             </Link>
-            <Link href="/bons-plans">
-              <span>02</span><strong>Séjours & tout compris</strong><small>Prix total et conditions de l&apos;offre</small>
+            <Link href="/campings-france/parc-aquatique">
+              <span>02</span><strong>Avec parc aquatique</strong><small>Piscines, toboggans et vacances en famille</small>
             </Link>
-            <Link href="/destinations">
-              <span>03</span><strong>Vacances en famille</strong><small>Destination, période et budget réaliste</small>
+            <Link href="/campings-france/montagne">
+              <span>03</span><strong>À la montagne</strong><small>Lacs, randonnées et fraîcheur en été</small>
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="section offers-preview">
+        <div className="site-container">
+          <div className="section-heading"><div><p className="eyebrow">Sélection du moment</p><h2>Trois campings pour commencer la comparaison</h2></div><Link href="/campings-france/camping" className="text-link">Voir les 20 fiches détaillées →</Link></div>
+          <div className="partner-offer-grid">{homepageCampings.map((camping) => <article className="partner-offer-card" key={camping.id}>
+            <div className="partner-offer-image"><Image src={camping.image} alt={`${camping.name} à ${camping.city}`} fill sizes="(max-width: 800px) 100vw, 33vw" />{camping.stars ? <span>{camping.stars} étoiles</span> : null}</div>
+            <div className="partner-offer-content"><div className="partner-offer-meta"><Link href={`/mobil-home/${camping.departmentSlug}`}>{camping.departmentName}</Link><small>{camping.city}</small></div><h3>{camping.name}</h3><p>{camping.editorialAngle}</p><div className="partner-offer-footer"><div><strong>{camping.region}</strong><small>Conseils et réservation</small></div><Link href={`/campings-france/camping/${camping.slug}`}>Voir la fiche →</Link></div></div>
+          </article>)}</div>
+          <p className="partner-disclosure">Sélection issue du flux Suncamp. Les disponibilités et le prix total dépendent de vos dates.</p>
         </div>
       </section>
 
