@@ -55,6 +55,12 @@ export default function Home() {
       article.tags.some((tag) => tag.toLowerCase() === "mobil-home"),
     )
     .slice(0, 6);
+  const bookingGuides = [
+    "reserver-mobil-home-ete-2027-quand-commencer",
+    "camping-mobil-home-avec-chien-guide",
+    "mobil-home-6-personnes-vraies-chambres",
+    "camping-sans-voiture-mobil-home",
+  ].flatMap((slug) => articles.find((article) => article.slug === slug) ?? []);
   const destinationCount = articles.filter(
     (article) => article.category === "destination",
   ).length;
@@ -185,6 +191,21 @@ export default function Home() {
           </div>
         </section>
       ) : null}
+
+      <section className="section latest-section">
+        <div className="site-container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Préparer les prochaines vacances</p>
+              <h2>Quatre décisions à prendre avant de réserver</h2>
+            </div>
+            <Link href="/campings-france/camping" className="text-link">Voir les campings →</Link>
+          </div>
+          <div className="article-grid">
+            {bookingGuides.map((article) => <ArticleCard key={article.slug} article={article} />)}
+          </div>
+        </div>
+      </section>
 
       {amazonGuides.length > 0 ? (
         <section className="section shopping-section">

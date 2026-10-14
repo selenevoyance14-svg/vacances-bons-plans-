@@ -14,13 +14,15 @@ type Props = {
 
 function ArticleLink({ href = "", rel, ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) {
   const isAmazon = href.includes("amazon.fr") || href.includes("amzn.to");
+  const isSuncamp = href.includes("suncamp.fr");
+  const isAffiliate = isAmazon || isSuncamp;
 
   return (
     <a
       href={href}
       {...props}
-      target={isAmazon ? "_blank" : props.target}
-      rel={isAmazon ? "sponsored nofollow noopener noreferrer" : rel}
+      target={isAffiliate ? "_blank" : props.target}
+      rel={isAffiliate ? "sponsored nofollow noopener noreferrer" : rel}
     />
   );
 }
