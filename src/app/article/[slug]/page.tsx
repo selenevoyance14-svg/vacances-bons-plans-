@@ -81,6 +81,9 @@ export default function ArticlePage({ params }: Props) {
     Math.ceil(article.content.replace(/[#*_[\]()`>-]/g, " ").split(/\s+/).length / 220),
   );
   const articleTags = new Set(article.tags.map((tag) => tag.toLowerCase()));
+  const isBungalowGuide = article.tags.some((tag) =>
+    /maison de vacances|chalet|villa|bungalow\.net/i.test(tag),
+  );
   const relatedArticles = getArticles()
     .filter((candidate) => candidate.slug !== article.slug)
     .map((candidate) => ({
@@ -169,7 +172,29 @@ export default function ArticlePage({ params }: Props) {
             </aside>
           ) : null}
           <MDXRemote source={article.content} components={{ a: ArticleLink }} />
-          {article.category !== "destination" && article.tags.some((tag) => /mobil-home|camping|bord de mer|montagne|lac/i.test(tag)) ? (
+          {isBungalowGuide ? (
+            <aside className="destination-partner-box">
+              <p className="eyebrow">Maisons, chalets et villas</p>
+              <h2>Comparer les locations adaptées à votre séjour</h2>
+              <p>
+                Consultez les logements et les disponibilités à jour chez Bungalow.net,
+                puis vérifiez le prix total, la caution et les conditions d’annulation.
+              </p>
+              <a
+                href={affiliateLinks.bungalow.homepage}
+                className="button button-primary"
+                target="_blank"
+                rel="sponsored nofollow noopener noreferrer"
+              >
+                Rechercher sur Bungalow.net <span aria-hidden>→</span>
+              </a>
+              <small>
+                Lien affilié : une réservation peut nous rapporter une commission,
+                sans coût supplémentaire pour vous.
+              </small>
+            </aside>
+          ) : null}
+          {!isBungalowGuide && article.category !== "destination" && article.tags.some((tag) => /mobil-home|camping|bord de mer|montagne|lac/i.test(tag)) ? (
             <aside className="destination-partner-box">
               <p className="eyebrow">Explorer les campings</p>
               <h2>Passer du conseil à une sélection concrète</h2>

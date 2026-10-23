@@ -213,7 +213,7 @@ export default function VarMobilHomePage() {
             ))}
           </div>
           <p className="partner-disclosure">
-            Sélection issue du flux Suncamp, contrôlé le 3 septembre 2026. Le flux
+            Sélection issue du flux Suncamp, mis à jour régulièrement. Le flux
             ne communique pas de prix ni de dates pour ces campings : vérifiez-les
             sur le site partenaire. Si vous réservez après avoir utilisé un lien,
             Vacances Bons Plans peut recevoir une commission, sans surcoût pour vous.

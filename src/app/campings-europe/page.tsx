@@ -43,7 +43,7 @@ export default function EuropeCampingsPage() {
               );
             })}
           </div>
-          <p className="partner-disclosure">Sélection issue du flux Suncamp contrôlé le 3 octobre 2026. Les prix et disponibilités dépendent des dates. Les liens sont affiliés et peuvent soutenir le site sans surcoût pour vous.</p>
+          <p className="partner-disclosure">Sélection issue du flux Suncamp, mis à jour régulièrement. Les prix et disponibilités dépendent des dates. Les liens sont affiliés et peuvent soutenir le site sans surcoût pour vous.</p>
         </div>
       </section>
     </>

@@ -77,6 +77,11 @@ export default function Home() {
     "mobil-home-6-personnes-vraies-chambres",
     "camping-sans-voiture-mobil-home",
   ].flatMap((slug) => articles.find((article) => article.slug === slug) ?? []);
+  const seasonalRentalGuides = [
+    "location-chalet-noel-2026-famille",
+    "grande-maison-nouvel-an-2027",
+    "vacances-hiver-2027-chalet-montagne",
+  ].flatMap((slug) => articles.find((article) => article.slug === slug) ?? []);
   const destinationCount = articles.filter(
     (article) => article.category === "destination",
   ).length;
@@ -186,6 +191,21 @@ export default function Home() {
           <div className="section-heading"><div><p className="eyebrow">Nouveau partenaire · Bungalow.net</p><h2>Une maison, un chalet ou une villa plutôt qu’un camping ?</h2></div><Link href="/locations-vacances" className="text-link">Toutes les locations →</Link></div>
           <div className="city-link-grid">{(["bord-de-mer", "montagne", "grande-famille"] as const).map((slug) => <Link href={`/locations-vacances/${slug}`} key={slug}><span>Maison de vacances</span><strong>{bungalowThemes[slug].name}</strong><small>{bungalowThemes[slug].idealFor} →</small></Link>)}</div>
           <p className="partner-disclosure">Bungalow.net est un partenaire affilié spécialisé dans les maisons et parcs de vacances en France et en Europe.</p>
+        </div>
+      </section>
+
+      <section className="section latest-section">
+        <div className="site-container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Hiver 2026–2027</p>
+              <h2>Noël, Nouvel An et montagne : préparer sa location</h2>
+            </div>
+            <Link href="/locations-vacances/montagne" className="text-link">Voir les chalets →</Link>
+          </div>
+          <div className="article-grid">
+            {seasonalRentalGuides.map((article) => <ArticleCard key={article.slug} article={article} />)}
+          </div>
         </div>
       </section>
 
