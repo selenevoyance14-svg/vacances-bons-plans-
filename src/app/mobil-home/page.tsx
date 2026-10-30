@@ -14,14 +14,24 @@ export const metadata: Metadata = {
 };
 
 export default function MobilHomePage() {
+  const destinationCities = new Map(
+    mobilHomeDestinations.map((destination) => [
+      destination.slug,
+      getCityGuidesForDepartment(destination.slug),
+    ]),
+  );
   const selectorDestinations = mobilHomeDestinations.map((destination) => ({
     slug: destination.slug,
     name: `${destination.departmentNumber} · ${destination.name}`,
-    cities: getCityGuidesForDepartment(destination.slug).map((city) => ({
+    cities: (destinationCities.get(destination.slug) ?? []).map((city) => ({
       slug: city.slug,
       name: city.name,
     })),
   }));
+  const cityCount = selectorDestinations.reduce(
+    (total, destination) => total + destination.cities.length,
+    0,
+  );
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -62,6 +72,7 @@ export default function MobilHomePage() {
             et vérifiez le budget complet du séjour avant de rejoindre le partenaire.
           </p>
           <div className="method-pills" aria-label="Notre méthode">
+            <span>{cityCount} villes détaillées</span>
             <span>Prix total expliqué</span>
             <span>Informations datées</span>
             <span>Redirection vers le partenaire</span>
@@ -74,7 +85,7 @@ export default function MobilHomePage() {
         <div className="site-container">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">{mobilHomeDestinations.length} départements à comparer</p>
+              <p className="eyebrow">{mobilHomeDestinations.length} départements · {cityCount} villes à comparer</p>
               <h2>De la Méditerranée aux côtes de la Manche.</h2>
             </div>
           </div>
@@ -84,6 +95,7 @@ export default function MobilHomePage() {
                 ? suncampVarOffers
                 : (suncampOffersByDepartment[destination.slug] ?? []);
               const preview = offers[0];
+              const cityTotal = destinationCities.get(destination.slug)?.length ?? 0;
               const content = (
                 <>
                   {preview ? (
@@ -111,7 +123,7 @@ export default function MobilHomePage() {
                     </ul>
                     {preview ? (
                       <small className="destination-card-example">
-                        À découvrir : {preview.name}
+                        {cityTotal} villes détaillées · À découvrir : {preview.name}
                       </small>
                     ) : null}
                     <strong className="destination-card-action">

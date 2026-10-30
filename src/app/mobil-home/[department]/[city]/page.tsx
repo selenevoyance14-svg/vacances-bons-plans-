@@ -48,7 +48,7 @@ export default function CityMobilHomePage({ params }: PageProps) {
     name: `Location de mobil-home à ${guide.name}`,
     description: guide.intro,
     url: `https://vacances-bons-plans.fr/mobil-home/${guide.departmentSlug}/${guide.slug}`,
-    dateModified: "2026-09-21",
+    dateModified: "2026-10-30",
     breadcrumb: {
       "@type": "BreadcrumbList",
       itemListElement: [
