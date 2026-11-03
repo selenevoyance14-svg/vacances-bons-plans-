@@ -177,7 +177,7 @@ export default function Home() {
 
       <section className="section offers-preview">
         <div className="site-container">
-          <div className="section-heading"><div><p className="eyebrow">Sélection du moment</p><h2>Trois campings pour commencer la comparaison</h2></div><Link href="/campings-france/camping" className="text-link">Voir les 20 fiches détaillées →</Link></div>
+          <div className="section-heading"><div><p className="eyebrow">Sélection du moment</p><h2>Trois campings pour commencer la comparaison</h2></div><Link href="/campings-france/camping" className="text-link">Voir les {featuredCampings.length} fiches détaillées →</Link></div>
           <div className="partner-offer-grid">{homepageCampings.map((camping) => <article className="partner-offer-card" key={camping.id}>
             <div className="partner-offer-image"><Image src={camping.image} alt={`${camping.name} à ${camping.city}`} fill sizes="(max-width: 800px) 100vw, 33vw" />{camping.stars ? <span>{camping.stars} étoiles</span> : null}</div>
             <div className="partner-offer-content"><div className="partner-offer-meta"><Link href={`/mobil-home/${camping.departmentSlug}`}>{camping.departmentName}</Link><small>{camping.city}</small></div><h3>{camping.name}</h3><p>{camping.editorialAngle}</p><div className="partner-offer-footer"><div><strong>{camping.region}</strong><small>Conseils et réservation</small></div><Link href={`/campings-france/camping/${camping.slug}`}>Voir la fiche →</Link></div></div>
