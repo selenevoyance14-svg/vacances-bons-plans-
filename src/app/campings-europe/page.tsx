@@ -4,8 +4,8 @@ import Link from "next/link";
 import { europeCountryGuides, europeOffers, type EuropeCountrySlug } from "@/lib/europeCampingData";
 
 export const metadata: Metadata = {
-  title: "Campings en Europe : Italie, Espagne, Hongrie et Portugal",
-  description: "Découvrez notre sélection de campings Suncamp en Italie, en Espagne et en Hongrie, ainsi que le suivi des offres au Portugal.",
+  title: "Campings en Europe : 12 pays à comparer",
+  description: "Découvrez des campings en Italie, Espagne, Croatie, Autriche, Slovénie, Pays-Bas, Allemagne, Belgique et dans toute l’Europe.",
   alternates: { canonical: "/campings-europe" },
 };
 
@@ -17,7 +17,7 @@ export default function EuropeCampingsPage() {
     <>
       <section className="listing-hero europe-hero">
         <div className="site-container">
-          <p className="eyebrow eyebrow-light">Italie · Espagne · Hongrie · Portugal</p>
+          <p className="eyebrow eyebrow-light">Italie · Espagne · Croatie · Pays-Bas · Allemagne</p>
           <h1>Les vacances en camping prennent la route de l’Europe.</h1>
           <p>{totalOffers} campings issus du flux Suncamp, avec leurs vraies villes, photos, notes et liens de réservation.</p>
         </div>
@@ -30,12 +30,13 @@ export default function EuropeCampingsPage() {
             {countries.map(([slug, country]) => {
               const offers = europeOffers[slug] ?? [];
               const image = offers[0]?.image;
+              const partnerHref = "partnerHref" in country ? country.partnerHref : undefined;
               return (
                 <Link href={`/campings-europe/${slug}`} key={slug} className="europe-country-card">
                   {image ? <Image src={image} alt={`Camping en ${country.name}`} fill sizes="(max-width: 760px) 100vw, 50vw" /> : <div className="europe-country-placeholder" />}
                   <span className="europe-country-shade" />
                   <span className="europe-country-copy">
-                    <small>{offers.length ? `${offers.length} campings disponibles` : "Catalogue en attente"}</small>
+                    <small>{offers.length ? `${offers.length} campings disponibles` : partnerHref ? "Catalogue partenaire disponible" : "Catalogue en attente"}</small>
                     <strong>{country.name}</strong>
                     <em>{country.highlights.join(" · ")}</em>
                   </span>

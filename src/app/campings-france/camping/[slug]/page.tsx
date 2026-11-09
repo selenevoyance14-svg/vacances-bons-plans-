@@ -7,6 +7,15 @@ import { featuredCampings, featuredCampingsBySlug } from "@/lib/featuredCampings
 
 type Props = { params: { slug: string } };
 
+const varDepartmentFallback = {
+  advice: ["Vérifiez la distance réelle jusqu’à la plage et les navettes proposées.", "Anticipez la circulation entre Fréjus, Saint-Raphaël et le golfe de Saint-Tropez en été.", "Contrôlez la climatisation, l’ombre de la parcelle et les dates d’ouverture des piscines."],
+  sectors: [
+    { name: "Fréjus et Saint-Aygulf", profile: "Plages, patrimoine romain et grands campings familiaux.", strength: "Nombreuses activités", watch: "Circulation estivale" },
+    { name: "Saint-Raphaël et Agay", profile: "Criques et randonnées au pied du massif de l’Estérel.", strength: "Paysages de l’Estérel", watch: "Accès aux massifs réglementé" },
+    { name: "Roquebrune-sur-Argens", profile: "Village, reliefs et accès aux plages des Issambres.", strength: "Mer et arrière-pays", watch: "Commune très étendue" },
+  ],
+};
+
 export function generateStaticParams() { return featuredCampings.map(({ slug }) => ({ slug })); }
 
 export function generateMetadata({ params }: Props): Metadata {
@@ -18,7 +27,8 @@ export function generateMetadata({ params }: Props): Metadata {
 export default function CampingPage({ params }: Props) {
   const camping = featuredCampingsBySlug[params.slug];
   if (!camping) notFound();
-  const department = departmentGuides[camping.departmentSlug];
+  const department = departmentGuides[camping.departmentSlug] ?? (camping.departmentSlug === "var" ? varDepartmentFallback : undefined);
+  if (!department) notFound();
   const cityHref = camping.citySlug ? `/mobil-home/${camping.departmentSlug}/${camping.citySlug}` : `/mobil-home/${camping.departmentSlug}`;
   const jsonLd = { "@context": "https://schema.org", "@type": "Campground", name: camping.name, image: camping.image, description: camping.editorialAngle, address: { "@type": "PostalAddress", addressLocality: camping.city, addressRegion: camping.departmentName, addressCountry: "FR" }, url: `https://vacances-bons-plans.fr/campings-france/camping/${camping.slug}` };
   return <>

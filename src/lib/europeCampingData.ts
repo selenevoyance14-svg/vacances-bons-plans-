@@ -6,6 +6,11 @@ export type EuropeCampingOffer = {
 type Row = [string, string, string, string, number | null, number | null, number | null, string, string];
 
 const rows: Record<string, Row[]> = {
+  allemagne: [],
+  belgique: [],
+  luxembourg: [],
+  "pays-bas": [],
+  "republique-tcheque": [],
   italie: [
     ["105013","Baia Domizia Camping Village","Baia Domizia","Campanie",4,9.3,0,"https://cdn.acsi.eu/6/9/c/6/69c66f9a06112.jpg","https://www.suncamp.fr/tradetracker/?tt=11662_1529348_515442_&r=https%3A%2F%2Fwww.suncamp.fr%2Fitalie%2Fcampanie%2Fcaserte%2Fbaia-domizia%2Fbaia-domizia-camping-village-105013%2F"],
     ["100648","Camping Barco Reale","San Baronto","Toscane",4,9,null,"https://cdn.acsi.eu/6/a/6/7/6a6769ae374be.jpg","https://www.suncamp.fr/tradetracker/?tt=11662_1529348_515442_&r=https%3A%2F%2Fwww.suncamp.fr%2Fitalie%2Ftoscane%2Fpistoia%2Fsan-baronto%2Fcamping-barco-reale-100648%2F"],
@@ -74,6 +79,14 @@ const rows: Record<string, Row[]> = {
   ],
 };
 
+export type EuropeCountryGuide = {
+  name: string;
+  intro: string;
+  highlights: readonly string[];
+  advice: readonly string[];
+  partnerHref?: string;
+};
+
 export const europeCountryGuides = {
   italie: { name: "Italie", intro: "Lacs du nord, Toscane, côte adriatique et Rome : une sélection variée de campings familiaux.", highlights: ["Lacs italiens", "Toscane", "Adriatique"], advice: ["Vérifiez les péages et le coût du trajet.", "En été, privilégiez une parcelle ombragée et la climatisation.", "Pour Venise ou Rome, contrôlez les transports depuis le camping."] },
   espagne: { name: "Espagne", intro: "Catalogne, Costa Brava et région de Valence pour des vacances entre plages et grandes villes.", highlights: ["Costa Brava", "Catalogne", "Méditerranée"], advice: ["Vérifiez la distance réelle à la plage.", "La climatisation est utile en juillet et août.", "Comparez les frais de stationnement et les navettes."] },
@@ -82,7 +95,12 @@ export const europeCountryGuides = {
   autriche: { name: "Autriche", intro: "Lacs de Carinthie, Tyrol et montagnes pour des vacances actives dans un climat plus frais.", highlights: ["Lacs alpins", "Montagne", "Randonnée"], advice: ["Vérifiez les vignettes autoroutières nécessaires.", "Prévoyez des vêtements pour les soirées fraîches.", "Contrôlez les cartes touristiques incluses dans le séjour."] },
   slovenie: { name: "Slovénie", intro: "Du lac de Bled à la côte adriatique, un petit pays adapté aux vacances nature et aux circuits en famille.", highlights: ["Lac de Bled", "Thermes", "Nature"], advice: ["Achetez la vignette autoroutière adaptée au séjour.", "Alternez les étapes pour limiter les kilomètres.", "Réservez tôt autour du lac de Bled en été."] },
   portugal: { name: "Portugal", intro: "Le Portugal est prévu dans notre sélection Europe, mais le flux Suncamp ne propose actuellement aucune offre réservable.", highlights: ["Atlantique", "Algarve", "Destination à suivre"], advice: ["Aucune offre Suncamp n’est affichée pour éviter de vous induire en erreur.", "Revenez consulter cette page lors des prochaines mises à jour du catalogue.", "Explorez entre-temps l’Espagne voisine."] },
-} as const;
+  allemagne: { name: "Allemagne", intro: "Forêt-Noire, lacs et régions boisées offrent des étapes accessibles pour un séjour nature ou un circuit en famille.", highlights: ["Forêt-Noire", "Lacs", "Itinérance"], advice: ["Vérifiez la vignette environnementale pour les étapes urbaines.", "Comparez la durée du trajet avec une étape intermédiaire.", "Contrôlez les équipements et hébergements proposés selon vos dates."], partnerHref: "https://www.suncamp.fr/tradetracker/?tt=11662_12_515442_&r=%2Fallemagne%2F" },
+  belgique: { name: "Belgique", intro: "Ardennes, littoral et parcs familiaux permettent un séjour proche de la France avec des trajets raisonnables.", highlights: ["Ardennes", "Littoral", "Proximité"], advice: ["Comparez le temps de route depuis votre région.", "Prévoyez une solution couverte en cas de pluie.", "Vérifiez la distance aux activités et aux commerces."], partnerHref: "https://www.suncamp.fr/tradetracker/?tt=11662_12_515442_&r=%2Fbelgique%2F" },
+  luxembourg: { name: "Luxembourg", intro: "Un petit pays verdoyant adapté aux séjours courts, aux randonnées et aux circuits entre Belgique, Allemagne et France.", highlights: ["Mullerthal", "Randonnée", "Court séjour"], advice: ["Regroupez les visites pour limiter les trajets.", "Vérifiez les transports gratuits disponibles.", "Réservez tôt pendant les week-ends prolongés."], partnerHref: "https://www.suncamp.fr/tradetracker/?tt=11662_12_515442_&r=%2Fluxembourg%2F" },
+  "pays-bas": { name: "Pays-Bas", intro: "Mer du Nord, lacs et pistes cyclables composent une destination familiale où le vélo facilite les vacances.", highlights: ["Mer du Nord", "Vélo", "Lacs"], advice: ["Vérifiez si les vélos sont inclus ou disponibles à la location.", "Prévoyez des vêtements imperméables même en été.", "Comparez la distance au littoral ou au lac le plus proche."], partnerHref: "https://www.suncamp.fr/tradetracker/?tt=11662_12_515442_&r=%2Fpays-bas%2F" },
+  "republique-tcheque": { name: "République tchèque", intro: "Lacs, forêts et villes historiques permettent de construire un circuit nature et culture au cœur de l’Europe.", highlights: ["Bohême", "Lacs", "Patrimoine"], advice: ["Vérifiez les règles de vignette autoroutière.", "Anticipez le change entre euro et couronne tchèque.", "Comparez les distances si Prague fait partie du programme."], partnerHref: "https://www.suncamp.fr/tradetracker/?tt=11662_12_515442_&r=%2Frepublique-tcheque%2F" },
+} as const satisfies Record<string, EuropeCountryGuide>;
 
 export type EuropeCountrySlug = keyof typeof europeCountryGuides;
 

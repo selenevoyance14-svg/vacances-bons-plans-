@@ -1,6 +1,6 @@
 import { cityGuides } from "@/lib/cityGuides";
 import { departmentGuides } from "@/lib/departmentGuides";
-import { suncampOffersByDepartment, type SuncampOffer } from "@/lib/suncampOffers";
+import { suncampOffersByDepartment, suncampVarOffers, type SuncampOffer } from "@/lib/suncampOffers";
 
 export type FeaturedCamping = SuncampOffer & {
   slug: string;
@@ -52,20 +52,43 @@ const selections: Record<string, string> = {
   "104213": "Un camping au bord de l’Ain pour rayonner vers les lacs du Jura, les cascades et les sentiers familiaux.",
   "100363": "Un domaine à Clairvaux-les-Lacs pour placer baignade, activités nautiques et découverte du Jura au centre du séjour.",
   "103308": "Un camping du Cotentin face à la mer pour associer plages, ports et excursions vers Cherbourg ou Barfleur.",
+  "100366": "Une adresse entre océan, port de Bourgenay et pistes cyclables pour découvrir le littoral vendéen en famille.",
+  "100388": "Un grand camping de La Palmyre entre pinède, parc aquatique et plages de la Côte Sauvage.",
+  "100507": "Une base au bord du lac de Léon pour alterner baignade calme, vélo en forêt et journées sur l’océan.",
+  "100543": "Un domaine méditerranéen adapté aux familles qui veulent plage, animations et excursions autour de Béziers.",
+  "100547": "Une adresse du littoral héraultais pour profiter de la mer tout en gardant le Canal du Midi et Pézenas accessibles.",
+  "100987": "Un séjour au bord du lac de Sanguinet, pratique avec de jeunes enfants et proche de Biscarrosse.",
+  "101177": "Une base francilienne au vert pour combiner repos au camping et escapades vers Paris ou Saint-Germain-en-Laye.",
+  "103360": "Un domaine vendéen près du lac du Jaunay, avec de nombreuses activités et l’océan accessible en excursion.",
+  "103420": "Une adresse dans la forêt de La Coubre, entre pistes cyclables, La Palmyre et plages atlantiques.",
+  "103479": "Un grand resort des Landes proche de l’océan, pensé pour les familles qui recherchent beaucoup d’équipements.",
+  "103932": "Un vaste domaine près de l’Aisne pour associer nature, patrimoine et excursions familiales dans le nord de la France.",
+  "103999": "Une base arborée près de Montpellier pour rayonner entre ville, garrigue et plages méditerranéennes.",
+  "104006": "Un camping entre étangs et Méditerranée, intéressant pour découvrir les espaces naturels autour de Frontignan.",
+  "104021": "Un grand domaine à Vias pour les familles qui privilégient parc aquatique, services et proximité du littoral.",
+  "104036": "Une adresse animée près de Valras-Plage pour associer journées de baignade et sorties vers Béziers.",
+  "104404": "Un cinq étoiles à Fréjus pour profiter d’un grand espace aquatique et explorer l’Estérel.",
+  "104405": "Un domaine familial sur les hauteurs de Fréjus, entre animations, bien-être et plages de la Côte d’Azur.",
+  "104409": "Une base calme près de Saint-Raphaël pour rejoindre les criques, la Corniche d’Or et les sentiers de l’Estérel.",
+  "104410": "Un camping près des étangs de Villepey pour combiner plage, nature et découverte de Fréjus.",
+  "108484": "Une adresse à Agay au pied des roches rouges de l’Estérel, adaptée aux amateurs de criques et de randonnée.",
 };
 
 function slugify(value: string) {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[’']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
-const allOffers = Object.entries(suncampOffersByDepartment).flatMap(([departmentSlug, offers]) =>
-  offers.map((offer) => ({ departmentSlug, offer })),
-);
+const allOffers = [
+  ...Object.entries(suncampOffersByDepartment).flatMap(([departmentSlug, offers]) =>
+    offers.map((offer) => ({ departmentSlug, offer })),
+  ),
+  ...suncampVarOffers.map((offer) => ({ departmentSlug: "var", offer })),
+];
 
 export const featuredCampings: FeaturedCamping[] = Object.entries(selections).flatMap(([id, editorialAngle]) => {
   const match = allOffers.find(({ offer }) => offer.id === id);
   if (!match) return [];
-  const department = departmentGuides[match.departmentSlug];
+  const department = departmentGuides[match.departmentSlug] ?? (match.departmentSlug === "var" ? { name: "Var", region: "Provence-Alpes-Côte d’Azur" } : undefined);
   if (!department) return [];
   const citySlug = slugify(match.offer.city);
   return [{

@@ -14,11 +14,12 @@ export function generateMetadata({ params }: Props): Metadata {
   const guide = europeCountryGuides[params.country as EuropeCountrySlug];
   if (!guide) return {};
   const offers = europeOffers[params.country as EuropeCountrySlug] ?? [];
+  const partnerHref = "partnerHref" in guide ? guide.partnerHref : undefined;
   return {
     title: `Camping en ${guide.name} : mobil-homes et campings à comparer`,
     description: offers.length ? `Comparez ${offers.length} campings en ${guide.name} avec photos, villes, notes et disponibilités Suncamp.` : `${guide.name} : guide camping et suivi des prochaines offres disponibles.`,
     alternates: { canonical: `/campings-europe/${params.country}` },
-    robots: offers.length ? undefined : { index: false, follow: true },
+    robots: offers.length || partnerHref ? undefined : { index: false, follow: true },
   };
 }
 
@@ -27,6 +28,7 @@ export default function EuropeCountryPage({ params }: Props) {
   const guide = europeCountryGuides[slug];
   if (!guide) notFound();
   const offers = europeOffers[slug] ?? [];
+  const partnerHref = "partnerHref" in guide ? guide.partnerHref : undefined;
   const otherCountries = (Object.keys(europeCountryGuides) as EuropeCountrySlug[]).filter((country) => country !== slug);
   const jsonLd = offers.length ? {
     "@context": "https://schema.org", "@type": "CollectionPage",
@@ -52,8 +54,10 @@ export default function EuropeCountryPage({ params }: Props) {
 
       {offers.length ? (
         <section className="section offers-preview"><div className="site-container"><div className="section-heading"><div><p className="eyebrow">Offres réelles du partenaire</p><h2>{offers.length} campings en {guide.name}</h2></div></div><div className="partner-offer-grid">{offers.map((offer) => <article key={offer.id} className="partner-offer-card"><div className="partner-offer-image"><Image src={offer.image} alt={`${offer.name} à ${offer.city}`} fill sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 33vw" />{offer.stars ? <span>{offer.stars} étoiles</span> : null}</div><div className="partner-offer-content"><div className="partner-offer-meta"><span>{offer.city} · {offer.region}</span>{offer.rating ? <small>Note {offer.rating}/10</small> : null}</div><h3>{offer.name}</h3><p>Un camping à {offer.city} pour découvrir {offer.region} et comparer les hébergements disponibles selon vos dates.</p><ul><li>{guide.highlights[0]}</li><li>{guide.highlights[1]}</li><li>{offer.distanceToSeaKm === 0 ? "Accès direct à la mer" : offer.distanceToSeaKm ? `Mer à environ ${offer.distanceToSeaKm.toLocaleString("fr-FR")} km` : "Situation à vérifier"}</li></ul><div className="partner-offer-footer"><div><strong>Tarif sur Suncamp</strong><small>Prix et dates chez le partenaire</small></div><a href={offer.href} target="_blank" rel="sponsored nofollow noopener noreferrer">Voir les disponibilités <span aria-hidden>↗</span></a></div></div></article>)}</div><p className="partner-disclosure">Les notes et informations proviennent du flux Suncamp, mis à jour régulièrement. Vérifiez toujours le prix total, les dates et les options sur le site partenaire.</p></div></section>
+      ) : partnerHref ? (
+        <section className="section"><div className="site-container"><div className="offers-empty"><div><p className="eyebrow">Catalogue partenaire</p><h2>Voir les campings disponibles en {guide.name}</h2><p>Le catalogue Suncamp existe bien pour cette destination. Nous préparons encore les fiches détaillées : consultez entre-temps les hébergements, dates et tarifs directement chez le partenaire.</p></div><a href={partnerHref} target="_blank" rel="sponsored nofollow noopener noreferrer" className="button button-primary">Explorer les campings <span aria-hidden>↗</span></a></div></div></section>
       ) : (
-        <section className="section"><div className="site-container"><div className="offers-empty"><div><p className="eyebrow">Catalogue surveillé</p><h2>Pas encore d’offre Suncamp au Portugal</h2><p>Le Portugal ne figure pas dans le flux partenaire actuel. Nous préférons l’indiquer clairement plutôt que d’afficher des campings impossibles à réserver. La page sera enrichie dès que de vraies offres seront disponibles.</p></div><Link href="/campings-europe/espagne" className="button button-primary">Voir les campings en Espagne <span aria-hidden>→</span></Link></div></div></section>
+        <section className="section"><div className="site-container"><div className="offers-empty"><div><p className="eyebrow">Catalogue surveillé</p><h2>Pas encore d’offre Suncamp en {guide.name}</h2><p>Cette destination ne figure pas dans le flux partenaire actuel. Nous préférons l’indiquer clairement plutôt que d’afficher des campings impossibles à réserver. La page sera enrichie dès que de vraies offres seront disponibles.</p></div><Link href="/campings-europe/espagne" className="button button-primary">Voir les campings en Espagne <span aria-hidden>→</span></Link></div></div></section>
       )}
 
       <section className="section"><div className="site-container"><div className="section-heading"><div><p className="eyebrow">Continuer en Europe</p><h2>Comparer les autres pays</h2></div></div><div className="city-link-grid">{otherCountries.map((country) => <Link key={country} href={`/campings-europe/${country}`}><span>Camping en Europe</span><strong>{europeCountryGuides[country].name}</strong><small>Découvrir →</small></Link>)}</div></div></section>
