@@ -4,8 +4,8 @@ import Link from "next/link";
 import { featuredCampings } from "@/lib/featuredCampings";
 
 export const metadata: Metadata = {
-  title: "60 campings en France à découvrir en mobil-home",
-  description: "Découvrez 60 campings en France sélectionnés entre mer, montagne, lac et campagne, avec photos, villes, départements et liens Suncamp.",
+  title: `${featuredCampings.length} campings en France à découvrir en mobil-home`,
+  description: `Découvrez ${featuredCampings.length} campings en France sélectionnés entre mer, montagne, lac et campagne, avec photos, villes, départements et liens Suncamp.`,
   alternates: { canonical: "/campings-france/camping" },
 };
 

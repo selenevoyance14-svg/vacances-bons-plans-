@@ -72,6 +72,15 @@ const selections: Record<string, string> = {
   "104409": "Une base calme près de Saint-Raphaël pour rejoindre les criques, la Corniche d’Or et les sentiers de l’Estérel.",
   "104410": "Un camping près des étangs de Villepey pour combiner plage, nature et découverte de Fréjus.",
   "108484": "Une adresse à Agay au pied des roches rouges de l’Estérel, adaptée aux amateurs de criques et de randonnée.",
+  "108496": "Une option plus paisible à Roquebrune-sur-Argens pour profiter de la Provence, de la piscine et des plages en excursion.",
+  "108789": "Un vaste domaine près de l’île d’Oléron, intéressant pour alterner espace aquatique, marais et sorties sur le littoral.",
+  "109870": "Une adresse dans la pinède vendéenne, à proximité de la plage des Conches et des pistes cyclables.",
+  "111515": "Un camping boisé face à Noirmoutier pour combiner plage, forêt de pins et découverte du marais breton.",
+  "116528": "Une option sur l’île de Ré pour privilégier la plage, le vélo et les villages, sans rechercher un grand parc aquatique.",
+  "117882": "Un camping familial dans la pinède de La Palmyre, entre pistes cyclables, zoo et plages de la Côte Sauvage.",
+  "121352": "Une adresse près de Valras pour les familles qui veulent piscine, animations et accès rapide à la Méditerranée.",
+  "121355": "Un village sous les pins dans les Landes, adapté aux séjours entre lacs, forêt, vélo et océan.",
+  "122897": "Une étape originale dans la Vienne pour dormir au bord de l’eau et privilégier un séjour nature loin du littoral.",
 };
 
 function slugify(value: string) {
